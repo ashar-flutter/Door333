@@ -25,6 +25,11 @@ export  'package:door333/pages/auth/forget_password.dart';
 export  'package:door333/pages/auth/sign_up.dart';
 export 'package:door333/pages/dashboard/nav_bar.dart';
 export 'package:door333/pages/dashboard/home/home_page.dart';
+export  'package:door333/pages/dashboard/home/profile_page.dart';
+
+
+
+
 
 
 // widgets.

@@ -95,9 +95,12 @@ class _CreatePostState extends State<CreatePost> {
               padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.5.h),
               child: Row(
                 children: [
-                  CircleAvatar(
-                    radius: 2.5.h,
-                    backgroundImage: AssetImage(AppImage.profile),
+                  onPress(
+                    child: CircleAvatar(
+                      radius: 2.5.h,
+                      backgroundImage: AssetImage(AppImage.profile),
+                    ),
+                    onTap: () => Get.to(ProfilePage()),
                   ),
                   SizedBox(width: 3.w),
                   Column(
