@@ -21,7 +21,7 @@ class _NavBarState extends State<NavBar> {
     const HomeScreen(),
     const Placeholder(),
     const MainChatPage(),
-    const Placeholder(),
+    const SettingScreen(),
   ];
 
   @override
@@ -59,7 +59,9 @@ class _NavBarState extends State<NavBar> {
                     Icon(
                       items[index]["icon"],
                       size: 24,
-                      color: isActive ? AppColors.primary : Color(0xFF000000).withValues(alpha: 0.6)
+                      color: isActive
+                          ? AppColors.primary
+                          : Color(0xFF000000).withValues(alpha: 0.6),
                     ),
                     const SizedBox(height: 3),
                     customText(

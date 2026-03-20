@@ -28,6 +28,8 @@ export 'package:door333/pages/dashboard/home/home_page.dart';
 export  'package:door333/pages/dashboard/home/profile_page.dart';
 export 'package:door333/pages/dashboard/chat/inbox.dart';
 export 'package:door333/pages/dashboard/chat/main_chat_page.dart';
+export  'package:door333/pages/dashboard/settings/setting_screen.dart';
+export  'package:door333/pages/dashboard/settings/setting_tile.dart';
 
 
 
