@@ -31,8 +31,13 @@ export 'package:door333/pages/dashboard/chat/main_chat_page.dart';
 export  'package:door333/pages/dashboard/settings/setting_screen.dart';
 export  'package:door333/pages/dashboard/settings/setting_tile.dart';
 export  'package:door333/pages/dashboard/settings/settings_pop_up.dart';
-
-
+export 'package:door333/pages/dashboard/market/market_place.dart';
+export 'package:door333/pages/dashboard/market/product_pop_ups.dart';
+export 'package:door333/pages/dashboard/market/product_detail/product_detail.dart';
+export 'package:door333/pages/dashboard/market/product_detail/payment_method.dart';
+export 'package:door333/pages/dashboard/market/product_detail/shipping_address.dart';
+export 'package:door333/pages/dashboard/market/product_detail/order_confirmed.dart';
+export 'package:door333/pages/dashboard/market/product_detail/order_summary.dart';
 
 
 

@@ -60,7 +60,7 @@ class _MainChatPageState extends State<MainChatPage> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 8.h),
+                SizedBox(height: 5.h),
 
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
@@ -73,7 +73,7 @@ class _MainChatPageState extends State<MainChatPage> {
                       SizedBox(width: 2.w),
                       customText(
                         'Chats',
-                        fontSize: 20.sp,
+                        fontSize: 19.sp,
                         color: AppColors.primary,
                         fontWeight: FontWeight.w800,
                       ),

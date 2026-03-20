@@ -14,7 +14,7 @@ class _SplashState extends State<Splash> {
   }
 
   Future<void> _navigateToBoarding() async {
-    await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 30));
     if (mounted) {
       Navigator.pushReplacement(
         context,
@@ -43,8 +43,8 @@ class _SplashState extends State<Splash> {
             Center(
               child: Image.asset(
                 AppImage.splash,
-                width: 30.w,
-                height: 30.h,
+                width: 29.w,
+                height: 29.h,
                 fit: BoxFit.contain,
               ),
             ),

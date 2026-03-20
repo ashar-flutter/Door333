@@ -1,21 +1,21 @@
 import '../config/barrel.dart';
 
 Future<void> showCustomPopup(
-  BuildContext context, {
-  required String title,
-  required String message,
-  required String buttonText,
-  required VoidCallback onButton,
-  IconData icon = Icons.check,
-  String? backLabel,
-  VoidCallback? onBack,
-  bool slideFromRight = false,
-  bool showIcon = false,
-  Widget? customContent,
-  String? extraButton,
-  VoidCallback? onExtra,
-  Color buttonColor = AppColors.primary,
-}) {
+    BuildContext context, {
+      required String title,
+      required String message,
+      required String buttonText,
+      required VoidCallback onButton,
+      IconData icon = Icons.check,
+      String? backLabel,
+      VoidCallback? onBack,
+      bool slideFromRight = false,
+      bool showIcon = false,
+      Widget? customContent,
+      String? extraButton,
+      VoidCallback? onExtra,
+      Color buttonColor = AppColors.primary,
+    }) {
   return showGeneralDialog(
     context: context,
     barrierDismissible: true,
@@ -23,7 +23,7 @@ Future<void> showCustomPopup(
     barrierColor: const Color(0xB3000000),
     transitionDuration: const Duration(milliseconds: 280),
     pageBuilder: (_, _, _) => const SizedBox.shrink(),
-    transitionBuilder: (context, anim, _, _) {
+    transitionBuilder: (ctx, anim, _, _) {
       final curved = CurvedAnimation(parent: anim, curve: Curves.easeOutBack);
       final slide = Tween<Offset>(
         begin: const Offset(1, 0),
@@ -50,7 +50,7 @@ Future<void> showCustomPopup(
                   children: [
                     if (backLabel != null)
                       onPress(
-                        onTap: onBack ?? () => Navigator.pop(context),
+                        onTap: onBack ?? () => Navigator.pop(ctx),
                         child: Row(
                           children: [
                             Icon(
@@ -70,7 +70,7 @@ Future<void> showCustomPopup(
                     else
                       const SizedBox.shrink(),
                     onPress(
-                      onTap: () => Navigator.pop(context),
+                      onTap: () => Navigator.pop(ctx),
                       child: Icon(
                         Icons.close,
                         size: 2.3.h,
@@ -144,9 +144,8 @@ Future<void> showCustomPopup(
                   SizedBox(height: 1.5.h),
                   customButton(
                     height: 6,
-
                     extraButton,
-                    onExtra ?? () => Navigator.pop(context),
+                    onExtra ?? () => Navigator.pop(ctx),
                     backgroundColor: Colors.white,
                     textColor: AppColors.primary,
                     borderColor: Colors.grey.shade300,
@@ -161,9 +160,9 @@ Future<void> showCustomPopup(
       return slideFromRight
           ? SlideTransition(position: slide, child: child)
           : ScaleTransition(
-              scale: curved,
-              child: FadeTransition(opacity: anim, child: child),
-            );
+        scale: curved,
+        child: FadeTransition(opacity: anim, child: child),
+      );
     },
   );
 }

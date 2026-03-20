@@ -33,7 +33,7 @@ class _SettingScreenState extends State<SettingScreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(height: 10.h),
+                        SizedBox(height: 6.h),
                         Row(
                           children: [
                             Image.asset(
@@ -44,7 +44,7 @@ class _SettingScreenState extends State<SettingScreen> {
                             SizedBox(width: 3.w),
                             customText(
                               'Settings',
-                              fontSize: 19.sp,
+                              fontSize: 18.8.sp,
                               color: AppColors.primary,
                               fontWeight: FontWeight.w900,
                             ),

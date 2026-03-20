@@ -14,18 +14,13 @@ void showChangeNamePopup(BuildContext context) {
       children: [
         SizedBox(height: 1.2.h),
 
-        customText('First Name', fontSize: 17.sp, fontWeight: FontWeight.w500),
+        customText('First Name', fontSize: 16.sp, fontWeight: FontWeight.w500),
         SizedBox(height: 1.h),
-        textField('Jane', fillColor: const Color(0xFFF5F5F5),
-        enableBorderColor: Colors.grey.shade300
-        ),
+        textField('Jane', fillColor: Colors.transparent, enableBorderColor: Colors.grey.shade300),
         SizedBox(height: 2.h),
-        customText('Last Name', fontSize: 17.sp, fontWeight: FontWeight.w500),
+        customText('Last Name', fontSize: 16.sp, fontWeight: FontWeight.w500),
         SizedBox(height: 1.h),
-        textField('Doe', fillColor: const Color(0xFFF5F5F5),
-            enableBorderColor: Colors.grey.shade300
-
-        ),
+        textField('Doe', fillColor: Colors.transparent, enableBorderColor: Colors.grey.shade300),
         SizedBox(height: 7.h),
       ],
     ),
@@ -48,7 +43,7 @@ void showChangePasswordPopup(BuildContext context) {
 
         customText(
           'Current Password',
-          fontSize: 17.sp,
+          fontSize: 16.sp,
           fontWeight: FontWeight.w500,
         ),
         SizedBox(height: 1.h),
@@ -56,14 +51,13 @@ void showChangePasswordPopup(BuildContext context) {
           'Enter current password',
           keyboardType: TextInputType.visiblePassword,
           obSecure: true,
-          fillColor: const Color(0xFFF5F5F5),
-            enableBorderColor: Colors.grey.shade300
-
+          fillColor: Colors.transparent,
+          enableBorderColor: Colors.grey.shade300,
         ),
         SizedBox(height: 2.h),
         customText(
           'New Password',
-          fontSize: 17.sp,
+          fontSize: 16.sp,
           fontWeight: FontWeight.w500,
         ),
         SizedBox(height: 1.h),
@@ -71,14 +65,13 @@ void showChangePasswordPopup(BuildContext context) {
           'Enter new password',
           keyboardType: TextInputType.visiblePassword,
           obSecure: true,
-          fillColor: const Color(0xFFF5F5F5),
-            enableBorderColor: Colors.grey.shade300
-
+          fillColor: Colors.transparent,
+          enableBorderColor: Colors.grey.shade300,
         ),
         SizedBox(height: 2.h),
         customText(
           'Confirm Password',
-          fontSize: 17.sp,
+          fontSize: 16.sp,
           fontWeight: FontWeight.w500,
         ),
         SizedBox(height: 1.h),
@@ -86,9 +79,8 @@ void showChangePasswordPopup(BuildContext context) {
           'Confirm new password',
           keyboardType: TextInputType.visiblePassword,
           obSecure: true,
-          fillColor: const Color(0xFFF5F5F5),
-            enableBorderColor: Colors.grey.shade300
-
+          fillColor: Colors.transparent,
+          enableBorderColor: Colors.grey.shade300,
         ),
         SizedBox(height: 4.3.h),
       ],
@@ -116,7 +108,7 @@ void showDeleteAccountPopup(BuildContext context) {
     context,
     title: 'Delete Account',
     message:
-        'Are you absolutely sure? This action cannot be undone. This will permanently delete your account and remove your data from our servers.',
+    'Are you absolutely sure? This action cannot be undone. This will permanently delete your account and remove your data from our servers.',
     buttonText: 'Delete Account',
     onButton: () => Navigator.pop(context),
     extraButton: 'Cancel',

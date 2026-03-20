@@ -91,16 +91,16 @@ class _BoardingState extends State<Boarding> {
                       children: [
                         customText(
                           onboardingData[currentIndex]['title']!,
-                          fontSize: 17.6.sp,
+                          fontSize: 18.sp,
                           fontWeight: FontWeight.w900,
                           textAlign: TextAlign.center,
                         ),
-                        SizedBox(height: 2.h),
+                        SizedBox(height: 1.h),
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 10.w),
                           child: customText(
                             onboardingData[currentIndex]['subtitle']!,
-                            fontSize: 16.3.sp,
+                            fontSize: 17.sp,
                             color: AppColors.lightText,
                             textAlign: TextAlign.center,
                           ),
