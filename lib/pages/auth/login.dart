@@ -61,8 +61,8 @@ class _LoginState extends State<Login> {
                         Center(
                           child: Image.asset(
                             AppImage.splash,
-                            height: 11.h,
-                            width: 11.h,
+                            height: 12.h,
+                            width: 12.h,
                             fit: BoxFit.contain,
                           ),
                         ),
@@ -70,14 +70,15 @@ class _LoginState extends State<Login> {
                         Center(
                           child: customText(
                             "Come as you are. We're glad you're here.",
-                            fontSize: 16.6.sp,
+                            fontSize: 16.7.sp,
                             fontWeight: FontWeight.w300,
+                            textAlign: TextAlign.center
                           ),
                         ),
                         SizedBox(height: 4.h),
                         customText(
                           'Email',
-                          fontSize: 16.3.sp,
+                          fontSize: 17.sp,
                           fontWeight: FontWeight.w600,
                         ),
                         SizedBox(height: 1.h),
@@ -89,7 +90,7 @@ class _LoginState extends State<Login> {
                         SizedBox(height: 2.5.h),
                         customText(
                           'Your Password',
-                          fontSize: 16.3.sp,
+                          fontSize: 17.sp,
                           fontWeight: FontWeight.w600,
                         ),
                         SizedBox(height: 1.h),
@@ -104,13 +105,15 @@ class _LoginState extends State<Login> {
                           onTap: () => Get.to(ForgetPassword()),
                           child: customText(
                             'Forgot Password?',
-                            fontSize: 16.3.sp,
+                            fontSize: 17.sp,
                             color: AppColors.primary,
                             decoration: TextDecoration.underline,
                           ),
                         ),
                         SizedBox(height: 4.h),
-                        customButton('Login', () {
+                        customButton(
+                            height: 6.4,
+                            'Login', () {
                           Get.offAll(()=> NavBar());
                         }, textColor: Colors.white),
                         SizedBox(height: 2.5.h),
@@ -121,14 +124,14 @@ class _LoginState extends State<Login> {
                           children: [
                             customText(
                               "Don't have an account?  ",
-                              fontSize: 16.6.sp,
+                              fontSize: 17.sp,
                               fontWeight: FontWeight.w300,
                             ),
                             onPress(
                               onTap: () => Get.to(SignUp()),
                               child: customText(
                                 'Register',
-                                fontSize: 16.3.sp,
+                                fontSize: 16.8.sp,
                                 color: AppColors.primary,
                                 decoration: TextDecoration.underline,
                               ),
@@ -146,12 +149,12 @@ class _LoginState extends State<Login> {
                     children: [
                       customText(
                         'Terms and Conditions',
-                        fontSize: 16.4.sp,
+                        fontSize: 17.sp,
                         color: AppColors.lightText,
                       ),
                       customText(
                         'Privacy Policy',
-                        fontSize: 16.4.sp,
+                        fontSize: 17.sp,
                         color: AppColors.lightText,
                       ),
                     ],

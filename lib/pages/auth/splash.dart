@@ -14,7 +14,7 @@ class _SplashState extends State<Splash> {
   }
 
   Future<void> _navigateToBoarding() async {
-    await Future.delayed(const Duration(seconds: 30));
+    await Future.delayed(const Duration(seconds: 3));
     if (mounted) {
       Navigator.pushReplacement(
         context,

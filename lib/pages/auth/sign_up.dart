@@ -126,13 +126,13 @@ class _SignUpState extends State<SignUp> {
                               SizedBox(height: 1.h),
                               customText(
                                 'Tap to upload photo',
-                                fontSize: 17.sp,
+                                fontSize: 17.3.sp,
                                 color: AppColors.primary,
                               ),
                             ],
                           ),
                         ),
-                        SizedBox(height: 3.h),
+                        SizedBox(height: 3.3.h),
                         Row(
                           children: [
                             Expanded(
@@ -141,7 +141,7 @@ class _SignUpState extends State<SignUp> {
                                 children: [
                                   customText(
                                     'First Name',
-                                    fontSize: 16.3.sp,
+                                    fontSize: 17.sp,
                                     fontWeight: FontWeight.w600,
                                   ),
                                   SizedBox(height: 1.h),
@@ -156,7 +156,7 @@ class _SignUpState extends State<SignUp> {
                                 children: [
                                   customText(
                                     'Last Name',
-                                    fontSize: 16.3.sp,
+                                    fontSize: 17.sp,
                                     fontWeight: FontWeight.w600,
                                   ),
                                   SizedBox(height: 1.h),
@@ -169,7 +169,7 @@ class _SignUpState extends State<SignUp> {
                         SizedBox(height: 2.5.h),
                         customText(
                           'Email',
-                          fontSize: 16.3.sp,
+                          fontSize: 17.sp,
                           fontWeight: FontWeight.w600,
                         ),
                         SizedBox(height: 1.h),
@@ -181,7 +181,7 @@ class _SignUpState extends State<SignUp> {
                         SizedBox(height: 2.5.h),
                         customText(
                           'Your Password',
-                          fontSize: 16.3.sp,
+                          fontSize: 17.sp,
                           fontWeight: FontWeight.w600,
                         ),
                         SizedBox(height: 1.h),
