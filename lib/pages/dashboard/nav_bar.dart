@@ -20,7 +20,7 @@ class _NavBarState extends State<NavBar> {
   final List<Widget> screens = [
     const HomeScreen(),
     const Placeholder(),
-    const Placeholder(),
+    const MainChatPage(),
     const Placeholder(),
   ];
 

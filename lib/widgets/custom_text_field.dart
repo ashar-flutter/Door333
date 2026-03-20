@@ -16,7 +16,9 @@ Widget textField(
       Function(String)? onChanged,
       bool autofocus = false,
       TextAlign textAlign = TextAlign.left,
-      IconData? prefixIcon,  // Changed to IconData
+      IconData? prefixIcon,
+      IconData? suffixIcon,
+      Function()? onSuffixTap,
     }) {
   return StatefulBuilder(
     builder: (BuildContext context, setState) {
@@ -45,17 +47,19 @@ Widget textField(
             child: Icon(prefixIcon, color: AppColors.primary, size: 2.2.h),
           )
               : null,
-          contentPadding: EdgeInsets.symmetric(
-            horizontal: 5.w,
-            vertical: 2.h,
-          ),
-          hintStyle: TextStyle(
-            fontFamily: 'Hellix',
-            fontSize: fontSize.sp,
-            fontWeight: FontWeight.w400,
-            color: AppColors.hintText,
-          ),
-          suffixIcon: keyboardType == TextInputType.visiblePassword
+          suffixIcon: suffixIcon != null
+              ? Padding(
+            padding: EdgeInsets.only(right: 4.w),
+            child: onPress(
+              onTap: onSuffixTap ?? () {},
+              child: Icon(
+                suffixIcon,
+                color: AppColors.primary,
+                size: 2.2.h,
+              ),
+            ),
+          )
+              : (keyboardType == TextInputType.visiblePassword
               ? Padding(
             padding: EdgeInsets.only(right: 5.w),
             child: onPress(
@@ -71,7 +75,17 @@ Widget textField(
               ),
             ),
           )
-              : null,
+              : null),
+          contentPadding: EdgeInsets.symmetric(
+            horizontal: 5.w,
+            vertical: 2.h,
+          ),
+          hintStyle: TextStyle(
+            fontFamily: 'Hellix',
+            fontSize: fontSize.sp,
+            fontWeight: FontWeight.w400,
+            color: AppColors.hintText,
+          ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(radius),
             borderSide: BorderSide(color: enableBorderColor),
