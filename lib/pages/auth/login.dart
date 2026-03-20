@@ -110,7 +110,9 @@ class _LoginState extends State<Login> {
                           ),
                         ),
                         SizedBox(height: 4.h),
-                        customButton('Login', () {}, textColor: Colors.white),
+                        customButton('Login', () {
+                          Get.offAll(()=> NavBar());
+                        }, textColor: Colors.white),
                         SizedBox(height: 2.5.h),
                         Container(height: 1, color: AppColors.titleColor),
                         SizedBox(height: 2.5.h),

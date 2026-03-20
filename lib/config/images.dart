@@ -10,6 +10,13 @@ class AppImage{
   static const String onBoard3= "assets/images/onboard_three.png";
 
 
+  // home
+  static const String men= "assets/images/men.png";
+  static const String profile= "assets/images/profile.png";
+  static const String sunSet= "assets/images/sun_set.png";
+  static const String verse= "assets/images/verse.png";
+
+
 
 
 

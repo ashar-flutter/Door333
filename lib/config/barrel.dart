@@ -12,6 +12,7 @@ export  '../config/on_press.dart';
 export  'package:google_fonts/google_fonts.dart';
 export 'package:responsive_sizer/responsive_sizer.dart' hide ScreenType;
 export 'package:get/get.dart';
+export  'package:image_picker/image_picker.dart';
 
 
 
@@ -22,13 +23,14 @@ export 'package:door333/pages/auth/auth_page.dart';
 export 'package:door333/pages/auth/login.dart';
 export  'package:door333/pages/auth/forget_password.dart';
 export  'package:door333/pages/auth/sign_up.dart';
-
+export 'package:door333/pages/dashboard/nav_bar.dart';
+export 'package:door333/pages/dashboard/home/home_page.dart';
 
 
 // widgets.
 export 'package:door333/widgets/custom_button.dart';
 export 'package:door333/widgets/custom_text.dart';
 export 'package:door333/widgets/custom_text_field.dart';
-
-
+export 'package:door333/widgets/custom_pop_up.dart';
+export 'package:door333/widgets/image_picker_widget.dart';
 

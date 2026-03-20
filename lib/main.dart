@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       builder: (context, orientation, screenType) {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          home: Splash(),
+          home: NavBar(),
         );
       },
     );

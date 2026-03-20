@@ -71,7 +71,15 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                       SizedBox(height: 3.h),
                       customButton(
                         'Send Reset Link',
-                        () {},
+                            () => showCustomPopup(
+                          context,
+                          title: 'Check your email for the reset link.',
+                          message: "We've sent a password reset link to your email address. Please follow the link to create a new password.",
+                          buttonText: 'Resend Link',
+                          backLabel: 'Back to Login',
+                          onBack: () { Navigator.pop(context); Get.back(); },
+                          onButton: () => Navigator.pop(context),
+                        ),
                         textColor: Colors.white,
                       ),
                     ],
