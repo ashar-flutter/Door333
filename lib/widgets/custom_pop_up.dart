@@ -106,8 +106,8 @@ Future<void> showCustomPopup(
                       child: Center(
                         child: Image.asset(
                           AppImage.check,
-                          height: 4.2.h,
-                          width: 4.2.h,
+                          height: 6.h,
+                          width: 6.h,
                           color: AppColors.green,
                         ),
                       ),
