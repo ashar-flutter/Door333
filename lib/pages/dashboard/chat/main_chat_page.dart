@@ -66,10 +66,9 @@ class _MainChatPageState extends State<MainChatPage> {
                   padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
                   child: Row(
                     children: [
-                      Icon(
-                        Icons.sms,
+                      Image.asset(AppImage.chat,
+                      height: 3.h,
                         color: AppColors.primary,
-                        size: 3.h,
                       ),
                       SizedBox(width: 2.w),
                       customText(

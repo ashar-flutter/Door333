@@ -24,10 +24,12 @@ class _CreatePostState extends State<CreatePost> {
       message:
           'Your post is gone for approval, uploaded when approved by admin.',
       buttonText: 'Okay, Got it',
+      showIcon: true,
       onButton: () {
         Navigator.pop(context);
         showCustomPopup(
           context,
+          showIcon: true,
           title: 'Post Uploaded',
           message: 'Your post uploaded successfully',
           buttonText: 'Close',

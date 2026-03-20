@@ -101,7 +101,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   customText(
                     'Upload Photo / Video',
                     color: Colors.grey,
-                    fontSize: 16.sp,
+                    fontSize: 16.5.sp,
                   ),
                 ],
               ),
@@ -136,31 +136,32 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     customText(
                       p['name'],
-                      fontSize: 16.sp,
+                      fontSize: 17.sp,
                       fontWeight: FontWeight.w700,
                     ),
                     Row(
                       children: [
                         customText(
                           p['time'],
-                          fontSize: 15.sp,
+                          fontSize: 16.4.sp,
                           color: Colors.grey,
                         ),
-                        customText(' • ', fontSize: 13.sp, color: Colors.grey),
-                        Icon(Icons.public, size: 2.h, color: Colors.grey),
+                        customText(' • ', fontSize: 15.sp, color: Colors.grey),
+                        Icon(Icons.public, size: 2.6.h, color: Colors.grey),
                       ],
                     ),
+
                   ],
                 ),
               ],
             ),
           ),
-          // Caption
+          SizedBox(height: 2.h),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 4.w),
-            child: customText(p['caption'], fontSize: 16.sp),
+            child: customText(p['caption'], fontSize: 17.sp),
           ),
-          SizedBox(height: 1.h),
+          SizedBox(height: 2.h),
           // Image
           Image.asset(
             p['image'],
@@ -204,14 +205,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       customText(
                         'Sponsored',
-                        fontSize: 16.sp,
+                        fontSize: 17.sp,
                         fontWeight: FontWeight.w700,
                       ),
                       Row(
                         children: [
                           customText(
                             'Sponsored • ',
-                            fontSize: 15.sp,
+                            fontSize: 16.sp,
                             color: Colors.grey,
                           ),
                           Icon(Icons.public, size: 2.h, color: Colors.grey),
@@ -227,7 +228,7 @@ class _HomeScreenState extends State<HomeScreen> {
           // Caption
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 4.w),
-            child: customText(p['caption'], fontSize: 16.sp),
+            child: customText(p['caption'], fontSize: 17.sp),
           ),
           SizedBox(height: 1.h),
           // Image with overlay
@@ -254,12 +255,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           customText(
                             p['adTitle'],
-                            fontSize: 16.sp,
+                            fontSize: 17.sp,
                             fontWeight: FontWeight.w700,
                           ),
                           customText(
                             p['adUrl'],
-                            fontSize: 16.3.sp,
+                            fontSize: 16.8.sp,
                             color: AppColors.lightText,
                           ),
                         ],
@@ -301,15 +302,15 @@ class _HomeScreenState extends State<HomeScreen> {
                   color: AppColors.primary,
                   shape: BoxShape.circle,
                 ),
-                child: Icon(Icons.thumb_up, color: Colors.white, size: 2.h),
+                child: Icon(Icons.thumb_up, color: Colors.white, size: 2.3.h),
               ),
               SizedBox(width: 1.w),
-              customText('${p['likes']}', fontSize: 15.sp, color: Colors.grey),
+              customText('${p['likes']}', fontSize: 16.sp, color: Colors.grey),
             ],
           ),
           customText(
             '${p['comments']} comments',
-            fontSize: 15.sp,
+            fontSize: 16.sp,
             color: Colors.grey,
           ),
         ],

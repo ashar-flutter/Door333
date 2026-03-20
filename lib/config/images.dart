@@ -19,6 +19,14 @@ class AppImage{
 
 
 
+   //icons
+  static const String home= "assets/icons/home.png";
+  static const String market= "assets/icons/market.png";
+  static const String chat= "assets/icons/chat.png";
+  static const String settings= "assets/icons/settings.png";
+  static const String check= "assets/icons/check.png";
+
+
 
 
 

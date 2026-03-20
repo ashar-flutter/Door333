@@ -30,6 +30,7 @@ export 'package:door333/pages/dashboard/chat/inbox.dart';
 export 'package:door333/pages/dashboard/chat/main_chat_page.dart';
 export  'package:door333/pages/dashboard/settings/setting_screen.dart';
 export  'package:door333/pages/dashboard/settings/setting_tile.dart';
+export  'package:door333/pages/dashboard/settings/settings_pop_up.dart';
 
 
 

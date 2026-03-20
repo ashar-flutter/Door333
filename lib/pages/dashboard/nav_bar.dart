@@ -11,10 +11,10 @@ class _NavBarState extends State<NavBar> {
   int currentIndex = 0;
 
   final List<Map<String, dynamic>> items = [
-    {"icon": Icons.home_filled, "label": "Home"},
-    {"icon": Icons.storefront_outlined, "label": "Market"},
-    {"icon": Icons.textsms_outlined, "label": "Chat"},
-    {"icon": Icons.settings, "label": "Settings"},
+    {"icon": AppImage.home, "label": "Home"},
+    {"icon": AppImage.market, "label": "Market"},
+    {"icon": AppImage.chat, "label": "Chat"},
+    {"icon": AppImage.settings, "label": "Settings"},
   ];
 
   final List<Widget> screens = [
@@ -56,9 +56,10 @@ class _NavBarState extends State<NavBar> {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Icon(
+                    Image.asset(
                       items[index]["icon"],
-                      size: 24,
+                      width: 24,
+                      height: 24,
                       color: isActive
                           ? AppColors.primary
                           : Color(0xFF000000).withValues(alpha: 0.6),

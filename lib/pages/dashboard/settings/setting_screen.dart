@@ -36,10 +36,10 @@ class _SettingScreenState extends State<SettingScreen> {
                         SizedBox(height: 10.h),
                         Row(
                           children: [
-                            Icon(
-                              Icons.settings,
+                            Image.asset(
+                              AppImage.settings,
+                              height: 3.h,
                               color: AppColors.primary,
-                              size: 3.h,
                             ),
                             SizedBox(width: 3.w),
                             customText(
@@ -51,7 +51,6 @@ class _SettingScreenState extends State<SettingScreen> {
                           ],
                         ),
                         SizedBox(height: 4.h),
-
                         Center(
                           child: Column(
                             children: [
@@ -116,9 +115,7 @@ class _SettingScreenState extends State<SettingScreen> {
                         ),
                         SizedBox(height: 5.h),
                         Divider(height: 1.h, color: AppColors.hintText),
-
                         SizedBox(height: 3.5.h),
-
                         customText(
                           'Personal Information',
                           fontSize: 17.3.sp,
@@ -132,9 +129,9 @@ class _SettingScreenState extends State<SettingScreen> {
                           bgColor: const Color(0xFFDBEAFE),
                           title: 'Name',
                           subtitle: 'Jane Doe',
+                          onTap: () => showChangeNamePopup(context),
                         ),
                         SizedBox(height: 2.h),
-
                         customText(
                           'Security',
                           fontSize: 17.3.sp,
@@ -147,9 +144,9 @@ class _SettingScreenState extends State<SettingScreen> {
                           bgColor: const Color(0xFFFFEDD4),
                           title: 'Password',
                           subtitle: 'Change your password',
+                          onTap: () => showChangePasswordPopup(context),
                         ),
                         SizedBox(height: 2.h),
-
                         customText(
                           'Actions',
                           fontSize: 17.3.sp,
@@ -162,6 +159,7 @@ class _SettingScreenState extends State<SettingScreen> {
                           bgColor: Colors.grey.shade200,
                           title: 'Log Out',
                           subtitle: '',
+                          onTap: () => showLogoutPopup(context),
                         ),
                         SettingTile(
                           icon: Icons.warning_amber_outlined,
@@ -170,9 +168,9 @@ class _SettingScreenState extends State<SettingScreen> {
                           title: 'Delete Account',
                           subtitle: '',
                           isRed: true,
+                          onTap: () => showDeleteAccountPopup(context),
                         ),
                         SizedBox(height: 3.h),
-
                         Center(
                           child: customText(
                             'Door333 V1.0.0',

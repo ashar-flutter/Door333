@@ -25,6 +25,7 @@ flutter:
   assets:
     - assets/images/
     - assets/logos/
+    - assets/icons/
 
   fonts:
     - family: Hellix

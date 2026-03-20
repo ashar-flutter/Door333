@@ -10,6 +10,11 @@ Future<void> showCustomPopup(
   String? backLabel,
   VoidCallback? onBack,
   bool slideFromRight = false,
+  bool showIcon = false,
+  Widget? customContent,
+  String? extraButton,
+  VoidCallback? onExtra,
+  Color buttonColor = AppColors.primary,
 }) {
   return showGeneralDialog(
     context: context,
@@ -37,7 +42,9 @@ Future<void> showCustomPopup(
             ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                // Close / back row
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -72,36 +79,79 @@ Future<void> showCustomPopup(
                     ),
                   ],
                 ),
-                SizedBox(height: 3.h),
-                customText(
-                  title,
-                  fontSize: 16.4.sp,
-                  fontWeight: FontWeight.w800,
-                  textAlign: TextAlign.center,
-                  color: AppColors.titleColor,
-                ),
-                SizedBox(height: 3.h),
-                Container(
-                  height: 10.h,
-                  width: 10.h,
-                  decoration: BoxDecoration(
-                    color: AppColors.lightGreen,
-                    shape: BoxShape.circle,
-                  ),
-                  child: Center(
-                    child: Icon(icon, color: AppColors.green, size: 4.h),
+                SizedBox(height: 2.h),
+
+                // Title
+                Center(
+                  child: customText(
+                    title,
+                    fontSize: 17.5.sp,
+                    fontWeight: FontWeight.w900,
+                    textAlign: TextAlign.center,
+                    color: AppColors.titleColor,
                   ),
                 ),
-                SizedBox(height: 3.2.h),
-                customText(
-                  message,
-                  fontSize: 17.sp,
-                  color: AppColors.titleColor,
-                  fontWeight: FontWeight.w400,
-                  textAlign: TextAlign.center,
+                SizedBox(height: 2.h),
+
+                // Icon circle — only when showIcon is true
+                if (showIcon && customContent == null) ...[
+                  Center(
+                    child: Container(
+                      height: 11.h,
+                      width: 11.h,
+                      decoration: BoxDecoration(
+                        color: AppColors.lightGreen,
+                        shape: BoxShape.circle,
+                      ),
+                      child: Center(
+                        child: Image.asset(
+                          AppImage.check,
+                          height: 4.2.h,
+                          width: 4.2.h,
+                          color: AppColors.green,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 2.h),
+                ],
+
+                // Message
+                Center(
+                  child: customText(
+                    message,
+                    fontSize: 16.3.sp,
+                    color: AppColors.titleColor,
+                    textAlign: TextAlign.center,
+                  ),
                 ),
-                SizedBox(height: 3.2.h),
-                customButton(buttonText, onButton, textColor: Colors.white),
+                SizedBox(height: 4.6.h),
+
+                if (customContent != null) ...[customContent],
+
+                // Primary button
+                customButton(
+                  height: 6,
+                  buttonText,
+                  onButton,
+                  textColor: Colors.white,
+                  backgroundColor: buttonColor,
+                  borderColor: buttonColor,
+                ),
+
+                // Extra button
+                if (extraButton != null) ...[
+                  SizedBox(height: 1.5.h),
+                  customButton(
+                    height: 6,
+
+                    extraButton,
+                    onExtra ?? () => Navigator.pop(context),
+                    backgroundColor: Colors.white,
+                    textColor: AppColors.primary,
+                    borderColor: Colors.grey.shade300,
+                  ),
+                ],
               ],
             ),
           ),

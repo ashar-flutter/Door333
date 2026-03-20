@@ -77,6 +77,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                           message: "We've sent a password reset link to your email address. Please follow the link to create a new password.",
                           buttonText: 'Resend Link',
                           backLabel: 'Back to Login',
+                          showIcon: true,
                           onBack: () { Navigator.pop(context); Get.back(); },
                           onButton: () => Navigator.pop(context),
                         ),
