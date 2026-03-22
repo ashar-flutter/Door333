@@ -28,7 +28,7 @@ class SettingTile extends StatelessWidget {
         margin: EdgeInsets.only(bottom: 1.h),
         padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.8.h),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(14),
+          borderRadius: BorderRadius.circular(18),
           border: Border.all(color: Colors.grey.shade300),
         ),
         child: Row(
@@ -50,7 +50,7 @@ class SettingTile extends StatelessWidget {
                     title,
                     fontSize: 17.sp,
                     fontWeight: FontWeight.w600,
-                    color: isRed ? Colors.red : AppColors.titleColor,
+                    color: isRed ?Color(0xFFEF4444): AppColors.titleColor,
                   ),
                   if (subtitle.isNotEmpty)
                     customText(subtitle, fontSize: 16.sp, color: Colors.grey),

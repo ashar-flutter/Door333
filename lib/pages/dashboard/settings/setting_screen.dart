@@ -29,11 +29,14 @@ class _SettingScreenState extends State<SettingScreen> {
               children: [
                 Expanded(
                   child: SingleChildScrollView(
-                    padding: EdgeInsets.symmetric(horizontal: 5.w),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 7.w,
+                      vertical: 2.h,
+                    ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(height: 6.h),
+                        SizedBox(height: 5.h),
                         Row(
                           children: [
                             Image.asset(
@@ -41,54 +44,72 @@ class _SettingScreenState extends State<SettingScreen> {
                               height: 3.h,
                               color: AppColors.primary,
                             ),
-                            SizedBox(width: 3.w),
+                            SizedBox(width: 3.2.w),
                             customText(
                               'Settings',
-                              fontSize: 18.8.sp,
+                              fontSize: 19.5.sp,
                               color: AppColors.primary,
-                              fontWeight: FontWeight.w900,
+                              fontWeight: FontWeight.w800,
                             ),
                           ],
                         ),
-                        SizedBox(height: 4.h),
+                        SizedBox(height: 4.6.h),
                         Center(
                           child: Column(
                             children: [
                               Stack(
                                 children: [
-                                  CircleAvatar(
-                                    radius: 6.h,
-                                    backgroundImage: AssetImage(
-                                      AppImage.profile,
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                        color: Colors.white,
+                                        width: 3.3,
+                                      ),
+                                      shape: BoxShape.circle,
+                                    ),
+                                    child: CircleAvatar(
+                                      radius: 6.3.h,
+                                      backgroundImage: AssetImage(
+                                        AppImage.profile,
+                                      ),
                                     ),
                                   ),
                                   Positioned(
                                     bottom: 0,
-                                    right: 0,
+                                    right: 4,
                                     child: Container(
-                                      padding: EdgeInsets.all(0.9.h),
+                                      padding: EdgeInsets.all(1.3.h),
                                       decoration: BoxDecoration(
                                         color: const Color(0xFF0DA2E7),
                                         shape: BoxShape.circle,
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.black.withValues(
+                                              alpha: 0.3,
+                                            ),
+                                            blurRadius: 6,
+                                            offset: Offset(0, 2),
+                                          ),
+                                        ],
                                       ),
                                       child: Icon(
                                         Icons.camera_alt_outlined,
                                         color: Colors.white,
-                                        size: 1.8.h,
+                                        size: 1.9.h,
                                       ),
                                     ),
                                   ),
                                 ],
                               ),
-                              SizedBox(height: 2.h),
+                              SizedBox(height: 2.2.h),
                               Container(
-                                height: 27,
-                                width: 110,
+                                height: 30,
+                                width: 115,
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
+                                  borderRadius: BorderRadius.circular(12),
                                   border: Border.all(
-                                    color: Colors.grey.shade400,
-                                    width: 1,
+                                    color: Colors.grey.shade300,
+                                    width: 1.3,
                                   ),
                                 ),
                                 child: Center(
@@ -97,14 +118,14 @@ class _SettingScreenState extends State<SettingScreen> {
                                     children: [
                                       Icon(
                                         Icons.delete_outline,
-                                        color: Colors.red,
+                                        color: Color(0xFFEF4444),
                                         size: 2.h,
                                       ),
                                       SizedBox(width: 1.w),
                                       customText(
                                         'Remove Photo',
-                                        fontSize: 16.sp,
-                                        color: Colors.red,
+                                        fontSize: 16.1.sp,
+                                        color: Color(0xFFEF4444),
                                       ),
                                     ],
                                   ),
@@ -114,13 +135,11 @@ class _SettingScreenState extends State<SettingScreen> {
                           ),
                         ),
                         SizedBox(height: 5.h),
-                        Divider(height: 1.h, color: AppColors.hintText),
-                        SizedBox(height: 3.5.h),
+                        Divider(height: 1.h, color: Colors.grey.shade300),
+                        SizedBox(height: 3.6.h),
                         customText(
                           'Personal Information',
-                          fontSize: 17.3.sp,
-                          fontWeight: FontWeight.w700,
-                          color: AppColors.titleColor,
+                          fontSize: 17.sp,
                         ),
                         SizedBox(height: 2.h),
                         SettingTile(
@@ -131,13 +150,12 @@ class _SettingScreenState extends State<SettingScreen> {
                           subtitle: 'Jane Doe',
                           onTap: () => showChangeNamePopup(context),
                         ),
-                        SizedBox(height: 2.h),
+                        SizedBox(height: 2.3.h),
                         customText(
                           'Security',
-                          fontSize: 17.3.sp,
-                          fontWeight: FontWeight.w700,
+                          fontSize: 17.sp,
                         ),
-                        SizedBox(height: 1.h),
+                        SizedBox(height: 2.h),
                         SettingTile(
                           icon: Icons.lock,
                           iconColor: Colors.orange,
@@ -146,13 +164,12 @@ class _SettingScreenState extends State<SettingScreen> {
                           subtitle: 'Change your password',
                           onTap: () => showChangePasswordPopup(context),
                         ),
-                        SizedBox(height: 2.h),
+                        SizedBox(height: 2.3.h),
                         customText(
                           'Actions',
-                          fontSize: 17.3.sp,
-                          fontWeight: FontWeight.w700,
+                          fontSize: 17.sp,
                         ),
-                        SizedBox(height: 1.h),
+                        SizedBox(height: 2.h),
                         SettingTile(
                           icon: Icons.logout,
                           iconColor: Colors.grey,
@@ -163,19 +180,19 @@ class _SettingScreenState extends State<SettingScreen> {
                         ),
                         SettingTile(
                           icon: Icons.warning_amber_outlined,
-                          iconColor: Colors.red,
+                          iconColor: Color(0xFFEF4444),
                           bgColor: Colors.red.shade50,
                           title: 'Delete Account',
                           subtitle: '',
                           isRed: true,
                           onTap: () => showDeleteAccountPopup(context),
                         ),
-                        SizedBox(height: 3.h),
+                        SizedBox(height: 5.4.h),
                         Center(
                           child: customText(
                             'Door333 V1.0.0',
                             fontSize: 17.sp,
-                            color: AppColors.hintText,
+                            color: AppColors.lightText,
                           ),
                         ),
                         SizedBox(height: 2.h),
