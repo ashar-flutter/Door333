@@ -62,11 +62,11 @@ class _CreatePostState extends State<CreatePost> {
                           size: 2.3.h,
                           color: AppColors.titleColor,
                         ),
-                        SizedBox(width: 2.w),
+                        SizedBox(width: 4.w),
                         customText(
                           'Create Post',
-                          fontSize: 17.sp,
-                          fontWeight: FontWeight.w600,
+                          fontSize: 17.3.sp,
+                          fontWeight: FontWeight.w700,
                           color: AppColors.titleColor,
                         ),
                       ],
@@ -82,24 +82,26 @@ class _CreatePostState extends State<CreatePost> {
                         : Colors.grey.shade100,
                     textColor: _pickedImage != null
                         ? Colors.white
-                        : Colors.grey.shade600,
+                        : Colors.grey.shade400,
                     borderColor: Colors.transparent,
                     borderRadius: 12,
                   ),
                 ],
               ),
             ),
+            SizedBox(height: 1.h),
             SizedBox(
               width: double.infinity,
-              child: Divider(height: 1, color: Colors.grey.shade200),
+              child: Divider(height: 1, color: Colors.grey.shade300),
             ),
+            SizedBox(height: 1.h),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.5.h),
               child: Row(
                 children: [
                   onPress(
                     child: CircleAvatar(
-                      radius: 2.5.h,
+                      radius: 2.7.h,
                       backgroundImage: AssetImage(AppImage.profile),
                     ),
                     onTap: () => Get.to(ProfilePage()),
@@ -108,24 +110,25 @@ class _CreatePostState extends State<CreatePost> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      customText(
-                        'Jane Doe',
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w700,
-                      ),
+                      customText('Jane Doe', fontSize: 17.sp),
+                      SizedBox(height: 0.6),
                       Row(
                         children: [
-                          Icon(Icons.public, size: 2.h, color: Colors.grey),
+                          Icon(
+                            Icons.public,
+                            size: 2.h,
+                            color: AppColors.lightText,
+                          ),
                           SizedBox(width: 1.w),
                           customText(
                             'Public',
-                            fontSize: 15.sp,
-                            color: Colors.grey,
+                            fontSize: 15.6.sp,
+                            color: AppColors.lightText,
                           ),
                           Icon(
                             Icons.keyboard_arrow_down_rounded,
-                            size: 2.h,
-                            color: Colors.grey,
+                            size: 2.3.h,
+                            color: AppColors.lightText,
                           ),
                         ],
                       ),
@@ -134,53 +137,59 @@ class _CreatePostState extends State<CreatePost> {
                 ],
               ),
             ),
+            SizedBox(height: 1.3.h,),
             Expanded(
               child: SingleChildScrollView(
-                padding: EdgeInsets.symmetric(horizontal: 4.w),
                 child: Column(
                   children: [
-                    TextField(
-                      maxLines: null,
-                      autofocus: false,
-                      decoration: InputDecoration(
-                        hintText: "What's on your mind, Jane?",
-                        hintStyle: TextStyle(
-                          fontFamily: 'Hellix',
-                          color: AppColors.lightText,
-                          fontSize: 15.4.sp,
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 4.w),
+                      child: TextField(
+                        maxLines: null,
+                        autofocus: false,
+                        decoration: InputDecoration(
+                          hintText: "What's on your mind, Jane?",
+                          hintStyle: TextStyle(
+                            fontFamily: 'Hellix',
+                            color: AppColors.lightText,
+                            fontSize: 15.7.sp,
+                          ),
+                          border: InputBorder.none,
+                          isDense: true,
+                          contentPadding: EdgeInsets.zero,
                         ),
-                        border: InputBorder.none,
-                        isDense: true,
-                        contentPadding: EdgeInsets.zero,
-                      ),
-                      style: TextStyle(
-                        fontFamily: 'Hellix',
-                        fontSize: 16.sp,
-                        color: AppColors.lightText,
+                        style: TextStyle(
+                          fontFamily: 'Hellix',
+                          fontSize: 16.sp,
+                          color: AppColors.lightText,
+                        ),
                       ),
                     ),
                     SizedBox(height: 12.h),
                     if (_pickedImage != null) ...[
                       Stack(
                         children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(12),
-                            child: Image.file(
-                              _pickedImage!,
-                              width: double.infinity,
-                              height: 28.h,
-                              fit: BoxFit.cover,
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 4.w),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(12),
+                              child: Image.file(
+                                _pickedImage!,
+                                width: double.infinity,
+                                height: 28.h,
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
                           Positioned(
-                            top: 1.h,
-                            right: 2.w,
+                            top: 1.3.h,
+                            right: 6.w,
                             child: onPress(
                               onTap: () => setState(() => _pickedImage = null),
                               child: Container(
-                                padding: EdgeInsets.all(0.5.h),
+                                padding: EdgeInsets.all(0.8.h),
                                 decoration: BoxDecoration(
-                                  color: AppColors.primary,
+                                  color: Colors.grey.shade700,
                                   shape: BoxShape.circle,
                                 ),
                                 child: Icon(
@@ -197,10 +206,11 @@ class _CreatePostState extends State<CreatePost> {
                     ],
                     SizedBox(
                       width: double.infinity,
-                      child: Divider(height: 1, color: Colors.grey.shade200),
+                      child: Divider(height: 1, color: Colors.grey.shade300),
                     ),
-                    SizedBox(height: 2.h),
+                    SizedBox(height: 2.2.h),
                     Container(
+                      margin: EdgeInsets.symmetric(horizontal: 15),
                       height: 7.h,
                       padding: EdgeInsets.symmetric(
                         horizontal: 4.w,
@@ -213,7 +223,7 @@ class _CreatePostState extends State<CreatePost> {
                           BoxShadow(
                             color: Colors.black.withValues(alpha: 0.2),
                             blurRadius: 8,
-                            offset: const Offset(0, 2),
+                            offset: const Offset(0, 3),
                           ),
                         ],
                       ),
@@ -222,8 +232,7 @@ class _CreatePostState extends State<CreatePost> {
                         children: [
                           customText(
                             'Add to your post',
-                            fontSize: 16.4.sp,
-                            color: AppColors.titleColor,
+                            fontSize: 16.6.sp,
                           ),
                           Row(
                             children: [

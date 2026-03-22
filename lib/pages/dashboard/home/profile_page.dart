@@ -12,11 +12,11 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Color(0xFFF5F7FA),
         body: Column(
           children: [
             Padding(
-              padding: EdgeInsets.only(left: 6.w, top: 3.h),
+              padding: EdgeInsets.only(left: 9.w, top: 3.h),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: onPress(
@@ -34,7 +34,7 @@ class _ProfilePageState extends State<ProfilePage> {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    SizedBox(height: 4.h),
+                    SizedBox(height: 3.h),
                     Stack(
                       alignment: Alignment.center,
                       children: [
@@ -46,10 +46,13 @@ class _ProfilePageState extends State<ProfilePage> {
                           bottom: 0,
                           right: 0,
                           child: Container(
-                            padding: EdgeInsets.all(0.9.h),
+                            padding: EdgeInsets.all(1.h),
                             decoration: BoxDecoration(
-                              color: Colors.white,
+                              color:Colors.grey.shade100,
                               shape: BoxShape.circle,
+                              border: Border.all(color: Colors.white,
+
+                              width: 3)
                             ),
                             child: Icon(
                               Icons.camera_alt_outlined,
@@ -60,42 +63,42 @@ class _ProfilePageState extends State<ProfilePage> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 1.5.h),
+                    SizedBox(height: 1.7.h),
                     customText(
                       'Jane Doe',
                       fontSize: 18.sp,
-                      fontWeight: FontWeight.w700,
+                      fontWeight: FontWeight.w900,
                     ),
                     SizedBox(height: 2.h),
                     Container(
                       width: double.infinity,
-                      margin: EdgeInsets.symmetric(horizontal: 7.w),
+                      margin: EdgeInsets.symmetric(horizontal: 6.w),
                       padding: EdgeInsets.symmetric(vertical: 1.2.h),
                       decoration: BoxDecoration(
-                        color: Color(0xFFF5F5F5),
-                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.grey.shade200,
+                        borderRadius: BorderRadius.circular(12),
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Icon(
                             Icons.edit_outlined,
-                            size: 2.3.h,
+                            size: 2.4.h,
                             color: AppColors.titleColor,
                           ),
                           SizedBox(width: 2.w),
                           customText(
                             'Edit Profile',
-                            fontSize: 15.9.sp,
-                            fontWeight: FontWeight.w500,
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w600,
                           ),
                         ],
                       ),
                     ),
                     SizedBox(height: 2.h),
 
-                    Divider(height: 1, color: Colors.grey.shade200),
-                    SizedBox(height: 1.5.h),
+                    Divider(height: 1, color: Colors.grey.shade300),
+                    SizedBox(height: 2.3.h),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 4.w),
                       child: Align(
@@ -103,11 +106,11 @@ class _ProfilePageState extends State<ProfilePage> {
                         child: customText(
                           'Posts',
                           fontSize: 17.sp,
-                          fontWeight: FontWeight.w700,
+                          fontWeight: FontWeight.w800,
                         ),
                       ),
                     ),
-                    SizedBox(height: 1.5.h),
+                    SizedBox(height: 2.3.h),
                     Container(
                       color: Colors.white,
                       child: Column(
@@ -136,25 +139,25 @@ class _ProfilePageState extends State<ProfilePage> {
                                       children: [
                                         customText(
                                           'Jane Doe',
-                                          fontSize: 16.sp,
-                                          fontWeight: FontWeight.w700,
+                                          fontSize: 17.sp,
                                         ),
+                                        SizedBox(height: 0.2.h,),
                                         Row(
                                           children: [
                                             customText(
                                               '2d',
-                                              fontSize: 15.sp,
-                                              color: Colors.grey,
+                                              fontSize: 16.sp,
+                                              color: AppColors.lightText,
                                             ),
                                             customText(
                                               ' • ',
-                                              fontSize: 15.sp,
-                                              color: Colors.grey,
+                                              fontSize: 16.sp,
+                                              color: AppColors.lightText,
                                             ),
                                             Icon(
                                               Icons.public,
                                               size: 2.h,
-                                              color: Colors.grey,
+                                              color: AppColors.lightText,
                                             ),
                                           ],
                                         ),
@@ -162,28 +165,32 @@ class _ProfilePageState extends State<ProfilePage> {
                                     ),
                                   ],
                                 ),
-                                Icon(Icons.more_horiz, color: Colors.grey),
+                                Icon(Icons.more_horiz,
+                                  color: AppColors.lightText,
+
+                                ),
                               ],
                             ),
                           ),
-                          SizedBox(height: 2.h,),
+                          SizedBox(height: 3.2.h),
                           // Caption
                           Padding(
                             padding: EdgeInsets.symmetric(horizontal: 4.w),
                             child: customText(
                               'Updated my profile picture!📸',
-                              fontSize: 16.2.sp,
+                              fontSize: 16.7.sp,
                             ),
                           ),
-                          SizedBox(height: 1.h),
+                          SizedBox(height: 1.4.h),
 
                           // Post image
                           Image.asset(
-                            AppImage.profile,
+                            AppImage.verse,
                             width: double.infinity,
-                            height: 32.h,
+                            height: 50.h,
                             fit: BoxFit.cover,
                           ),
+                          SizedBox(height: 1.4.h),
 
                           // Likes & comments
                           Padding(
@@ -197,7 +204,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 Row(
                                   children: [
                                     Container(
-                                      padding: EdgeInsets.all(0.4.h),
+                                      padding: EdgeInsets.all(0.8.h),
                                       decoration: BoxDecoration(
                                         color: AppColors.primary,
                                         shape: BoxShape.circle,
@@ -205,27 +212,28 @@ class _ProfilePageState extends State<ProfilePage> {
                                       child: Icon(
                                         Icons.thumb_up,
                                         color: Colors.white,
-                                        size: 2.h,
+                                        size: 1.6.h,
                                       ),
                                     ),
-                                    SizedBox(width: 1.w),
+                                    SizedBox(width: 1.5.w),
                                     customText(
                                       '96',
-                                      fontSize: 16.sp,
-                                      color: Colors.grey,
+                                      fontSize: 16.7.sp,
+                                      color: AppColors.lightText,
                                     ),
                                   ],
                                 ),
                                 customText(
                                   '52 comments',
-                                  fontSize: 16.sp,
-                                  color: Colors.grey,
+                                  fontSize: 16.6.sp,
+                                  color: AppColors.lightText,
                                 ),
                               ],
                             ),
                           ),
-
-                          Divider(height: 1, color: Colors.grey.shade200),
+                          SizedBox(height: 1.4.h,),
+                          Divider(height: 1, color: Colors.grey.shade300),
+                          SizedBox(height: 1.h,),
 
                           // Like & Comment actions
                           Row(
@@ -242,15 +250,14 @@ class _ProfilePageState extends State<ProfilePage> {
                                     children: [
                                       Icon(
                                         Icons.thumb_up_outlined,
-                                        color: Colors.grey,
+                                        color: AppColors.lightText,
                                         size: 2.8.h,
                                       ),
                                       SizedBox(width: 2.w),
                                       customText(
                                         'Like',
-                                        fontSize: 16.sp,
-                                        color: Colors.grey,
-                                        fontWeight: FontWeight.w500,
+                                        fontSize: 16.6.sp,
+                                        color: AppColors.lightText,
                                       ),
                                     ],
                                   ),
@@ -267,15 +274,14 @@ class _ProfilePageState extends State<ProfilePage> {
                                     children: [
                                       Icon(
                                         Icons.chat_bubble_outline,
-                                        color: Colors.grey,
+                                        color: AppColors.lightText,
                                         size: 2.8.h,
                                       ),
                                       SizedBox(width: 2.w),
                                       customText(
                                         'Comment',
-                                        fontSize: 16.sp,
-                                        color: Colors.grey,
-                                        fontWeight: FontWeight.w500,
+                                        fontSize: 16.6.sp,
+                                        color: AppColors.lightText,
                                       ),
                                     ],
                                   ),

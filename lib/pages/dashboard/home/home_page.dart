@@ -40,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
       'isPublic': true,
       'avatar': AppImage.profile,
       'caption': 'Loving this new minimalist style ✨',
-      'image': AppImage.verse,
+      'image': AppImage.sunSet,
       'likes': 256,
       'comments': 42,
       'liked': false,
@@ -50,10 +50,10 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFF0F2F5),
+      backgroundColor: Color(0xFFF5F7FA),
       body: ListView(
         children: [
-          SizedBox(height: 3.h),
+          SizedBox(height: 2.7.h),
           // Upload bar
           onPress(onTap: () => Get.to(CreatePost()), child: _uploadBar()),
           SizedBox(height: 1.h),
@@ -94,13 +94,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   Icon(
                     Icons.photo_library_outlined,
                     color: AppColors.green,
-                    size: 2.2.h,
+                    size: 2.3.h,
                   ),
                   SizedBox(width: 2.w),
                   customText(
                     'Upload Photo / Video',
-                    color: Colors.grey,
-                    fontSize: 16.5.sp,
+                    color: AppColors.lightText,
+                    fontSize: 16.7.sp,
                   ),
                 ],
               ),
@@ -145,7 +145,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Icon(
                           Icons.public_outlined,
                           size: 2.2.h,
-                          color: Colors.grey,
+                          color: AppColors.lightText,
                         ),
                       ],
                     ),
@@ -320,7 +320,7 @@ class _HomeScreenState extends State<HomeScreen> {
               customText(
                 '${p['likes']}',
                 fontSize: 16.4.sp,
-                color: AppColors.titleColor,
+                color: AppColors.lightText,
               ),
             ],
           ),
@@ -328,7 +328,7 @@ class _HomeScreenState extends State<HomeScreen> {
             '${p['comments']} comments',
             fontSize: 16.2.sp,
 
-            color: AppColors.titleColor,
+            color: AppColors.lightText,
           ),
         ],
       ),
@@ -345,7 +345,7 @@ class _HomeScreenState extends State<HomeScreen> {
           _actionBtn(
             Icons.thumb_up_off_alt,
             'Like',
-            p['liked'] ? AppColors.primary : AppColors.titleColor,
+            p['liked'] ? AppColors.primary : AppColors.lightText,
             () {
               setState(() => posts[i]['liked'] = !posts[i]['liked']);
             },
@@ -353,7 +353,7 @@ class _HomeScreenState extends State<HomeScreen> {
           _actionBtn(
             Icons.chat_bubble_outline,
             'Comment',
-            AppColors.titleColor,
+            AppColors.lightText,
             () {},
           ),
         ],

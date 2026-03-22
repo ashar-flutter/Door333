@@ -40,6 +40,41 @@ class _MainChatPageState extends State<MainChatPage> {
     },
   ];
 
+  Widget _searchField() {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(19),
+        border: Border.all(color: Colors.grey.shade300, width: 1.1),
+      ),
+      height: 6.h,
+      width: double.infinity,
+      child: TextField(
+        decoration: InputDecoration(
+          fillColor: Color(0xFFE2E8F0),
+          prefixIcon: Icon(
+            Icons.search_outlined,
+            color: AppColors.lightText,
+            size: 2.8.h,
+          ),
+          hintText: "Search person by name...",
+          hintStyle: TextStyle(
+            fontSize: 15.7.sp,
+            color: AppColors.hintText,
+            fontFamily: "Hellix",
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(17),
+            borderSide: BorderSide(color: Colors.grey.shade100),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(17),
+            borderSide: BorderSide(color: AppColors.primary),
+          ),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -63,35 +98,30 @@ class _MainChatPageState extends State<MainChatPage> {
                 SizedBox(height: 5.h),
 
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
+                  padding: EdgeInsets.symmetric(horizontal: 7.w, vertical: 2.h),
                   child: Row(
                     children: [
-                      Image.asset(AppImage.chat,
-                      height: 3.h,
+                      Image.asset(
+                        AppImage.chat,
+                        height: 3.h,
                         color: AppColors.primary,
                       ),
-                      SizedBox(width: 2.w),
+                      SizedBox(width: 3.2.w),
                       customText(
                         'Chats',
-                        fontSize: 19.sp,
+                        fontSize: 19.5.sp,
                         color: AppColors.primary,
                         fontWeight: FontWeight.w800,
                       ),
                     ],
                   ),
                 ),
-                SizedBox(height: 1.h),
+                SizedBox(height: 1.1.h),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 5.w),
-                  child: textField(
-                    'Search person by name...',
-                    prefixIcon: Icons.search,
-                    focusBorderColor: Colors.grey.shade400,
-                    enableBorderColor: Colors.grey.shade300,
-                    fillColor: Colors.grey.shade50,
-                  ),
+                  padding: EdgeInsets.symmetric(horizontal: 6.w),
+                  child: _searchField(),
                 ),
-                SizedBox(height: 3.h),
+                SizedBox(height: 4.h),
 
                 // Stories row
                 SizedBox(
@@ -115,7 +145,7 @@ class _MainChatPageState extends State<MainChatPage> {
                               if (stories[i]['online'])
                                 Positioned(
                                   bottom: 0,
-                                  right: 0,
+                                  right: 2,
                                   child: Container(
                                     height: 1.4.h,
                                     width: 1.4.h,
@@ -135,14 +165,14 @@ class _MainChatPageState extends State<MainChatPage> {
                           customText(
                             stories[i]['name'],
                             fontSize: 17.sp,
-                            color: AppColors.titleColor,
+                            color: AppColors.black,
                           ),
                         ],
                       ),
                     ),
                   ),
                 ),
-                SizedBox(height: 2.2.h),
+                SizedBox(height: 2.5.h),
 
                 // Chat list
                 Expanded(
@@ -157,72 +187,80 @@ class _MainChatPageState extends State<MainChatPage> {
                             horizontal: 5.w,
                             vertical: 1.2.h,
                           ),
-                          child: Row(
+                          child: Column(
                             children: [
-                              Stack(
+                              Row(
                                 children: [
-                                  CircleAvatar(
-                                    radius: 3.h,
-                                    backgroundImage: AssetImage(c['avatar']),
-                                  ),
-                                  if (c['online'])
-                                    Positioned(
-                                      bottom: 0,
-                                      right: 0,
-                                      child: Container(
-                                        height: 1.3.h,
-                                        width: 1.3.h,
-                                        decoration: BoxDecoration(
-                                          color: Colors.green,
-                                          shape: BoxShape.circle,
-                                          border: Border.all(
-                                            color: Colors.white,
-                                            width: 1.5,
-                                          ),
+                                  Stack(
+                                    children: [
+                                      CircleAvatar(
+                                        radius: 3.4.h,
+                                        backgroundImage: AssetImage(
+                                          c['avatar'],
                                         ),
                                       ),
-                                    ),
-                                ],
-                              ),
-                              SizedBox(width: 3.w),
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    customText(
-                                      c['name'],
-                                      fontSize: 16.9.sp,
-                                      fontWeight: FontWeight.w700,
-                                    ),
-                                    customText(
-                                      c['msg'],
-                                      fontSize: 15.9.sp,
-                                      color: AppColors.lightText,
-                                      maxLines: 1,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: [
-                                  customText(
-                                      c['time'],
-                                      fontSize: 15.8.sp,
-                                      color: AppColors.lightText
+                                      if (c['online'])
+                                        Positioned(
+                                          bottom: 0,
+                                          right: 2,
+                                          child: Container(
+                                            height: 1.3.h,
+                                            width: 1.3.h,
+                                            decoration: BoxDecoration(
+                                              color: Colors.green,
+                                              shape: BoxShape.circle,
+                                              border: Border.all(
+                                                color: Colors.white,
+                                                width: 1.5,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                    ],
                                   ),
-                                  SizedBox(height: 0.5.h),
-                                  if (c['unread'])
-                                    Container(
-                                      height: 1.5.h,
-                                      width: 1.5.h,
-                                      decoration: BoxDecoration(
-                                        color: AppColors.primary,
-                                        shape: BoxShape.circle,
-                                      ),
+                                  SizedBox(width: 3.w),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        customText(
+                                          c['name'],
+                                          fontSize: 17.sp,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                        customText(
+                                          c['msg'],
+                                          fontSize: 16.3.sp,
+                                          color: AppColors.lightText,
+                                          maxLines: 1,
+                                        ),
+                                      ],
                                     ),
+                                  ),
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    children: [
+                                      customText(
+                                        c['time'],
+                                        fontSize: 16.sp,
+                                        color: AppColors.lightText,
+                                      ),
+                                      SizedBox(height: 0.5.h),
+                                      if (c['unread'])
+                                        Container(
+                                          height: 1.5.h,
+                                          width: 1.5.h,
+                                          decoration: BoxDecoration(
+                                            color: AppColors.primary,
+                                            shape: BoxShape.circle,
+                                          ),
+                                        ),
+                                    ],
+                                  ),
                                 ],
                               ),
+                              if (i < chats.length - 1) SizedBox(height: 1.h),
                             ],
                           ),
                         ),

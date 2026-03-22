@@ -14,6 +14,46 @@ class _InboxState extends State<Inbox> {
     {'text': 'See you tomorrow! 👋', 'isMe': false},
   ];
 
+  Widget _messageField() {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.grey.shade100,
+        borderRadius: BorderRadius.circular(25),
+      ),
+      child: Row(
+        children: [
+          Expanded(
+            child: TextField(
+              decoration: InputDecoration(
+                hintText: 'Message',
+                hintStyle: TextStyle(
+                  fontFamily: 'Hellix',
+                  fontSize: 16.sp,
+                  color: AppColors.lightText,
+                ),
+                border: InputBorder.none,
+                contentPadding: EdgeInsets.symmetric(
+                  horizontal: 6.w,
+                  vertical: 1.5.h,
+                ),
+              ),
+              style: TextStyle(fontFamily: 'Hellix', fontSize: 16.sp),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(right: 3.w),
+            child: Image.asset(
+              AppImage.sendSms,
+              height: 2.8.h,
+              width: 2.8.h,
+              color: AppColors.primary,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -33,10 +73,10 @@ class _InboxState extends State<Inbox> {
             ),
             Column(
               children: [
-                SizedBox(height: 1.h,),
+                SizedBox(height: 2.2.h),
                 Padding(
                   padding: EdgeInsets.symmetric(
-                    horizontal: 4.w,
+                    horizontal: 6.w,
                     vertical: 1.5.h,
                   ),
                   child: Row(
@@ -45,27 +85,23 @@ class _InboxState extends State<Inbox> {
                         onTap: () => Get.back(),
                         child: Icon(
                           Icons.arrow_back,
-                          size: 2.3.h,
+                          size: 2.4.h,
                           color: AppColors.primary,
                         ),
                       ),
-                      SizedBox(width: 6.w),
+                      SizedBox(width: 7.w),
                       CircleAvatar(
-                        radius: 2.8.h,
+                        radius: 2.9.h,
                         backgroundImage: AssetImage(AppImage.profile),
                       ),
                       SizedBox(width: 3.w),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          customText(
-                            'Sarah Wilson',
-                            fontSize: 17.sp,
-                            fontWeight: FontWeight.w700,
-                          ),
+                          customText('Sarah Wilson', fontSize: 17.4.sp),
                           customText(
                             'Active now',
-                            fontSize: 16.sp,
+                            fontSize: 16.2.sp,
                             color: AppColors.lightText,
                           ),
                         ],
@@ -73,7 +109,8 @@ class _InboxState extends State<Inbox> {
                     ],
                   ),
                 ),
-                Divider(height: 1, color: Colors.grey.shade200),
+                SizedBox(height: 1.h),
+                Container(height: 2.7, color: Colors.grey.shade300),
 
                 // Messages
                 Expanded(
@@ -87,17 +124,18 @@ class _InboxState extends State<Inbox> {
                       Center(
                         child: Column(
                           children: [
+                            SizedBox(height: 2.h),
                             CircleAvatar(
-                              radius: 5.h,
+                              radius: 5.5.h,
                               backgroundImage: AssetImage(AppImage.profile),
                             ),
-                            SizedBox(height: 1.4.h),
+                            SizedBox(height: 1.3.h),
                             customText(
                               'Sarah Wilson',
                               fontSize: 17.6.sp,
-                              fontWeight: FontWeight.w800,
+                              fontWeight: FontWeight.w700,
                             ),
-                            SizedBox(height: 8.h),
+                            SizedBox(height: 9.h),
                           ],
                         ),
                       ),
@@ -112,20 +150,7 @@ class _InboxState extends State<Inbox> {
                     horizontal: 4.w,
                     vertical: 1.5.h,
                   ),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: textField(
-                          'Message',
-                          enableBorderColor: Colors.transparent,
-                          fillColor: Colors.grey.shade100,
-                          radius: 20,
-                          suffixIcon: Icons.send,
-                          focusBorderColor: Colors.grey.shade300
-                        ),
-                      ),
-                    ],
-                  ),
+                  child: Row(children: [Expanded(child: _messageField())]),
                 ),
               ],
             ),
@@ -139,7 +164,7 @@ class _InboxState extends State<Inbox> {
     return Align(
       alignment: m['isMe'] ? Alignment.centerRight : Alignment.centerLeft,
       child: Container(
-        margin: EdgeInsets.only(bottom: 1.5.h),
+        margin: EdgeInsets.only(bottom: 2.4.h),
         padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.2.h),
         decoration: BoxDecoration(
           color: m['isMe'] ? AppColors.primary : Colors.grey.shade100,
@@ -153,7 +178,7 @@ class _InboxState extends State<Inbox> {
         child: customText(
           m['text'],
           fontSize: 16.4.sp,
-          color: m['isMe'] ? Colors.white : AppColors.lightText,
+          color: m['isMe'] ? Colors.white : Colors.grey.shade600,
         ),
       ),
     );
