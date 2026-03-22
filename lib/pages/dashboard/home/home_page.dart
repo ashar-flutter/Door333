@@ -1,5 +1,3 @@
-import 'package:door333/pages/dashboard/home/create_post.dart';
-
 import '../../../config/barrel.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -55,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: Color(0xFFF0F2F5),
       body: ListView(
         children: [
-          SizedBox(height: 2.h),
+          SizedBox(height: 3.h),
           // Upload bar
           onPress(onTap: () => Get.to(CreatePost()), child: _uploadBar()),
           SizedBox(height: 1.h),
@@ -66,6 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ? _sponsoredPost(i)
                 : _normalPost(i);
           }),
+          SizedBox(height: 0.8.h),
         ],
       ),
     );
@@ -134,11 +133,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    customText(
-                      p['name'],
-                      fontSize: 17.sp,
-                      fontWeight: FontWeight.w700,
-                    ),
+                    customText(p['name'], fontSize: 17.sp),
                     Row(
                       children: [
                         customText(
@@ -147,19 +142,22 @@ class _HomeScreenState extends State<HomeScreen> {
                           color: Colors.grey,
                         ),
                         customText(' • ', fontSize: 15.sp, color: Colors.grey),
-                        Icon(Icons.public, size: 2.6.h, color: Colors.grey),
+                        Icon(
+                          Icons.public_outlined,
+                          size: 2.2.h,
+                          color: Colors.grey,
+                        ),
                       ],
                     ),
-
                   ],
                 ),
               ],
             ),
           ),
-          SizedBox(height: 2.h),
+          SizedBox(height: 4.h),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 4.w),
-            child: customText(p['caption'], fontSize: 17.sp),
+            child: customText(p['caption'], fontSize: 16.5.sp),
           ),
           SizedBox(height: 2.h),
           // Image
@@ -169,12 +167,18 @@ class _HomeScreenState extends State<HomeScreen> {
             height: 35.h,
             fit: BoxFit.cover,
           ),
+          SizedBox(height: 1.4.h),
+
           // Likes & comments count
           _reactionRow(i),
+          SizedBox(height: 0.8.h),
           // Divider
-          Divider(height: 1, color: Colors.grey.shade200),
+          Divider(height: 1, color: Colors.grey.shade300),
+          SizedBox(height: 0.8.h),
+
           // Actions
           _actionRow(i),
+          SizedBox(height: 2.6.h),
         ],
       ),
     );
@@ -196,41 +200,43 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 CircleAvatar(
                   radius: 2.5.h,
-                  backgroundColor: Colors.grey.shade300,
+                  backgroundColor: AppColors.lightText,
                 ),
                 SizedBox(width: 3.w),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      customText(
-                        'Sponsored',
-                        fontSize: 17.sp,
-                        fontWeight: FontWeight.w700,
-                      ),
+                      customText('Sponsored', fontSize: 17.sp),
                       Row(
                         children: [
                           customText(
                             'Sponsored • ',
-                            fontSize: 16.sp,
-                            color: Colors.grey,
+                            fontSize: 16.4.sp,
+                            color: AppColors.lightText,
+                            fontWeight: FontWeight.w900,
                           ),
-                          Icon(Icons.public, size: 2.h, color: Colors.grey),
+                          Icon(
+                            Icons.public,
+                            size: 2.3.h,
+                            color: AppColors.lightText,
+                          ),
                         ],
                       ),
                     ],
                   ),
                 ),
-                Icon(Icons.more_horiz, color: Colors.grey),
+                Icon(Icons.more_horiz, color: AppColors.lightText),
               ],
             ),
           ),
+          SizedBox(height: 4.h),
           // Caption
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 4.w),
-            child: customText(p['caption'], fontSize: 17.sp),
+            child: customText(p['caption'], fontSize: 16.5.sp),
           ),
-          SizedBox(height: 1.h),
+          SizedBox(height: 1.7.h),
           // Image with overlay
           Stack(
             children: [
@@ -245,7 +251,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 left: 0,
                 right: 0,
                 child: Container(
-                  color: const Color(0xFFE2E8F0).withValues(alpha: 0.8),
+                  color: const Color(0xFFE2E8F0).withValues(alpha: 0.9),
                   padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -253,14 +259,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          customText(
-                            p['adTitle'],
-                            fontSize: 17.sp,
-                            fontWeight: FontWeight.w700,
-                          ),
+                          customText(p['adTitle'], fontSize: 17.sp),
                           customText(
                             p['adUrl'],
-                            fontSize: 16.8.sp,
+                            fontSize: 16.5.sp,
                             color: AppColors.lightText,
                           ),
                         ],
@@ -279,9 +281,15 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ],
           ),
+          SizedBox(height: 1.4.h),
           _reactionRow(i),
-          Divider(height: 1, color: Colors.grey.shade200),
+          SizedBox(height: 0.8.h),
+
+          Divider(height: 1, color: Colors.grey.shade300),
+          SizedBox(height: 0.8.h),
+
           _actionRow(i),
+          SizedBox(height: 2.6.h),
         ],
       ),
     );
@@ -297,21 +305,30 @@ class _HomeScreenState extends State<HomeScreen> {
           Row(
             children: [
               Container(
-                padding: EdgeInsets.all(0.4.h),
+                padding: EdgeInsets.all(0.8.h),
                 decoration: BoxDecoration(
                   color: AppColors.primary,
                   shape: BoxShape.circle,
                 ),
-                child: Icon(Icons.thumb_up, color: Colors.white, size: 2.3.h),
+                child: Icon(
+                  Icons.thumb_up_alt_sharp,
+                  color: Colors.white,
+                  size: 1.5.h,
+                ),
               ),
-              SizedBox(width: 1.w),
-              customText('${p['likes']}', fontSize: 16.sp, color: Colors.grey),
+              SizedBox(width: 1.6.w),
+              customText(
+                '${p['likes']}',
+                fontSize: 16.4.sp,
+                color: AppColors.titleColor,
+              ),
             ],
           ),
           customText(
             '${p['comments']} comments',
-            fontSize: 16.sp,
-            color: Colors.grey,
+            fontSize: 16.2.sp,
+
+            color: AppColors.titleColor,
           ),
         ],
       ),
@@ -326,14 +343,19 @@ class _HomeScreenState extends State<HomeScreen> {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           _actionBtn(
-            Icons.thumb_up_outlined,
+            Icons.thumb_up_off_alt,
             'Like',
-            p['liked'] ? AppColors.primary : Colors.grey,
+            p['liked'] ? AppColors.primary : AppColors.titleColor,
             () {
               setState(() => posts[i]['liked'] = !posts[i]['liked']);
             },
           ),
-          _actionBtn(Icons.chat_bubble_outline, 'Comment', Colors.grey, () {}),
+          _actionBtn(
+            Icons.chat_bubble_outline,
+            'Comment',
+            AppColors.titleColor,
+            () {},
+          ),
         ],
       ),
     );
@@ -351,14 +373,9 @@ class _HomeScreenState extends State<HomeScreen> {
         padding: EdgeInsets.symmetric(vertical: 1.h, horizontal: 6.w),
         child: Row(
           children: [
-            Icon(icon, color: color, size: 3.h),
+            Icon(icon, color: color, size: 2.7.h),
             SizedBox(width: 2.w),
-            customText(
-              label,
-              fontSize: 16.sp,
-              color: color,
-              fontWeight: FontWeight.w500,
-            ),
+            customText(label, fontSize: 16.2.sp, color: AppColors.titleColor),
           ],
         ),
       ),

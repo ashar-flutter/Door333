@@ -38,13 +38,12 @@ Future<void> showCustomPopup(
             padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 3.h),
             decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(30),
             ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Close / back row
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -55,14 +54,14 @@ Future<void> showCustomPopup(
                           children: [
                             Icon(
                               Icons.arrow_back,
-                              size: 2.h,
-                              color: AppColors.lightText,
+                              size: 2.3.h,
+                              color: AppColors.titleColor,
                             ),
-                            SizedBox(width: 1.w),
+                            SizedBox(width: 2.w),
                             customText(
                               backLabel,
-                              fontSize: 16.sp,
-                              color: AppColors.titleColor,
+                              fontSize: 16.5.sp,
+                              color: AppColors.lightText,
                             ),
                           ],
                         ),
@@ -74,24 +73,24 @@ Future<void> showCustomPopup(
                       child: Icon(
                         Icons.close,
                         size: 2.3.h,
-                        color: AppColors.lightText,
+                        color: AppColors.titleColor,
                       ),
                     ),
                   ],
                 ),
-                SizedBox(height: 2.h),
+                SizedBox(height: 2.2.h),
 
                 // Title
                 Center(
                   child: customText(
                     title,
-                    fontSize: 17.5.sp,
-                    fontWeight: FontWeight.w900,
+                    fontSize: 16.8.sp,
+                    fontWeight: FontWeight.w700,
                     textAlign: TextAlign.center,
                     color: AppColors.titleColor,
                   ),
                 ),
-                SizedBox(height: 2.h),
+                SizedBox(height: 2.4.h),
 
                 // Icon circle — only when showIcon is true
                 if (showIcon && customContent == null) ...[
@@ -106,21 +105,21 @@ Future<void> showCustomPopup(
                       child: Center(
                         child: Image.asset(
                           AppImage.check,
-                          height: 6.h,
-                          width: 6.h,
+                          height: 5.h,
+                          width: 5.h,
                           color: AppColors.green,
                         ),
                       ),
                     ),
                   ),
-                  SizedBox(height: 2.h),
+                  SizedBox(height: 2.4.h),
                 ],
 
                 // Message
                 Center(
                   child: customText(
                     message,
-                    fontSize: 16.3.sp,
+                    fontSize: 16.5.sp,
                     color: AppColors.titleColor,
                     textAlign: TextAlign.center,
                   ),

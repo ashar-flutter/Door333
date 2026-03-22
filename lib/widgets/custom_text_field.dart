@@ -9,7 +9,7 @@ Widget textField(
       bool obSecure = false,
       bool enable = true,
       double radius = 16,
-      double fontSize = 15,
+      double fontSize = 15.5,
       Color fillColor = Colors.white,
       Color enableBorderColor = AppColors.lightText,
       Color focusBorderColor = AppColors.primary,
@@ -83,8 +83,7 @@ Widget textField(
           hintStyle: TextStyle(
             fontFamily: 'Hellix',
             fontSize: fontSize.sp,
-            fontWeight: FontWeight.w400,
-            color: AppColors.hintText,
+            color: Colors.grey.shade400,
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(radius),

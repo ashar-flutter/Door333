@@ -47,7 +47,6 @@ class _AuthPageState extends State<AuthPage> {
                         customText(
                           'Welcome to',
                           fontSize: 18.7.sp,
-                          fontWeight: FontWeight.w200,
                         ),
                         SizedBox(height: 0.5.h),
                         customText(
@@ -60,14 +59,12 @@ class _AuthPageState extends State<AuthPage> {
                         customText(
                           'A door back to faith, opened with love,\nnot condemnation.',
                           fontSize: 16.9.sp,
-                          fontWeight: FontWeight.w300,
 
                         ),
                         SizedBox(height: 7.h),
                         customText(
                           "Let's Get Started...",
                           fontSize: 17.3.sp,
-                          fontWeight: FontWeight.w300,
                         ),
                         SizedBox(height: 1.5.h),
                         customButton(
@@ -80,14 +77,13 @@ class _AuthPageState extends State<AuthPage> {
                           icon: Icons.alternate_email,
                           iconPosition: IconPosition.end,
                         ),
-                        SizedBox(height: 2.h),
+                        SizedBox(height: 2.9.h),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             customText(
                               'Already have an account? ',
-                              fontSize: 17.2.sp,
-                              fontWeight: FontWeight.w300,
+                              fontSize: 17.3.sp,
                             ),
                             onPress(
                               onTap: () => Get.to(Login()),
@@ -95,7 +91,7 @@ class _AuthPageState extends State<AuthPage> {
                                 'Login',
                                 fontSize: 17.sp,
                                 color: AppColors.primary,
-                                fontWeight: FontWeight.w700,
+                                fontWeight: FontWeight.w900,
                                 decoration: TextDecoration.underline,
                               ),
                             ),
@@ -106,12 +102,12 @@ class _AuthPageState extends State<AuthPage> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 7.w, vertical: 2.h),
+                  padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 3.h),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       customText(
-                        'Terms and Conditions',
+                        'Terms & Conditions',
                         fontSize: 17.sp,
                         color: AppColors.lightText,
                         fontWeight: FontWeight.w200,

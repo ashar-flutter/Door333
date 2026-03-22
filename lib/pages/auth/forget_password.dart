@@ -29,7 +29,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 6.w, top: 3.h),
+                  padding: EdgeInsets.only(left: 9.w, top: 3.h),
                   child: onPress(
                     onTap: () => Get.back(),
                     child: Icon(
@@ -47,9 +47,9 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                       SizedBox(height: 4.h),
                       customText(
                         'Forgot Password?',
-                        fontSize: 20.sp,
+                        fontSize: 19.sp,
                         color: AppColors.primary,
-                        fontWeight: FontWeight.w800,
+                        fontWeight: FontWeight.w900,
                       ),
                       SizedBox(height: 1.h),
                       customText(
@@ -59,26 +59,31 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                       SizedBox(height: 4.h),
                       customText(
                         'Email',
-                        fontSize: 16.3.sp,
+                        fontSize: 17.sp,
                         fontWeight: FontWeight.w600,
                       ),
-                      SizedBox(height: 1.h),
+                      SizedBox(height: 1.6.h),
                       textField(
                         'Ex.abc@example.com',
                         keyboardType: TextInputType.emailAddress,
                         prefixIcon: Icons.alternate_email,
                       ),
-                      SizedBox(height: 3.h),
+                      SizedBox(height: 3.9.h),
                       customButton(
+                        height: 6.4,
                         'Send Reset Link',
-                            () => showCustomPopup(
+                        () => showCustomPopup(
                           context,
                           title: 'Check your email for the reset link.',
-                          message: "We've sent a password reset link to your email address. Please follow the link to create a new password.",
+                          message:
+                              "We've sent a password reset link to your email address. Please follow the link to create a new password.",
                           buttonText: 'Resend Link',
                           backLabel: 'Back to Login',
                           showIcon: true,
-                          onBack: () { Navigator.pop(context); Get.back(); },
+                          onBack: () {
+                            Navigator.pop(context);
+                            Get.back();
+                          },
                           onButton: () => Navigator.pop(context),
                         ),
                         textColor: Colors.white,

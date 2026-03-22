@@ -35,72 +35,72 @@ class _LoginState extends State<Login> {
                 fit: BoxFit.contain,
               ),
             ),
-            Column(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(left: 6.w, top: 3.h),
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: onPress(
-                      onTap: () => Get.back(),
-                      child: Icon(
-                        Icons.arrow_back_ios,
-                        size: 2.3.h,
-                        color: AppColors.titleColor,
+            SingleChildScrollView(
+              child: Column(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: 9.w, top: 3.h),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: onPress(
+                        onTap: () => Get.back(),
+                        child: Icon(
+                          Icons.arrow_back_ios,
+                          size: 2.3.h,
+                          color: AppColors.titleColor,
+                        ),
                       ),
                     ),
                   ),
-                ),
-                Expanded(
-                  child: SingleChildScrollView(
+                  SizedBox(height: 10.h),
+                  Center(
+                    child: Image.asset(
+                      AppImage.splash,
+                      height: 12.h,
+                      width: 12.h,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                  SizedBox(height: 3.h),
+                  Center(
+                    child: customText(
+                      "Come as you are. We're glad you're here.",
+                      fontSize: 16.7.sp,
+                      fontWeight: FontWeight.w300,
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  SizedBox(height: 4.h),
+                  Padding(
                     padding: EdgeInsets.symmetric(horizontal: 7.w),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(height: 12.h),
-                        Center(
-                          child: Image.asset(
-                            AppImage.splash,
-                            height: 12.h,
-                            width: 12.h,
-                            fit: BoxFit.contain,
-                          ),
-                        ),
-                        SizedBox(height: 3.h),
-                        Center(
-                          child: customText(
-                            "Come as you are. We're glad you're here.",
-                            fontSize: 16.7.sp,
-                            fontWeight: FontWeight.w300,
-                            textAlign: TextAlign.center
-                          ),
-                        ),
-                        SizedBox(height: 4.h),
                         customText(
                           'Email',
                           fontSize: 17.sp,
                           fontWeight: FontWeight.w600,
                         ),
-                        SizedBox(height: 1.h),
+                        SizedBox(height: 1.6.h),
                         textField(
                           'Ex.abc@example.com',
                           keyboardType: TextInputType.emailAddress,
                           prefixIcon: Icons.alternate_email,
                         ),
-                        SizedBox(height: 2.5.h),
+                        SizedBox(height: 3.h),
                         customText(
                           'Your Password',
                           fontSize: 17.sp,
                           fontWeight: FontWeight.w600,
                         ),
-                        SizedBox(height: 1.h),
+                        SizedBox(height: 1.6.h),
                         textField(
                           '••••••••',
                           keyboardType: TextInputType.visiblePassword,
                           obSecure: true,
                           prefixIcon: Icons.lock_outline,
                         ),
-                        SizedBox(height: 2.h),
+                        SizedBox(height: 1.9.h),
                         onPress(
                           onTap: () => Get.to(ForgetPassword()),
                           child: customText(
@@ -110,13 +110,11 @@ class _LoginState extends State<Login> {
                             decoration: TextDecoration.underline,
                           ),
                         ),
-                        SizedBox(height: 4.h),
-                        customButton(
-                            height: 6.4,
-                            'Login', () {
-                          Get.offAll(()=> NavBar());
+                        SizedBox(height: 4.5.h),
+                        customButton(height: 6.4, 'Login', () {
+                          Get.offAll(() => NavBar());
                         }, textColor: Colors.white),
-                        SizedBox(height: 2.5.h),
+                        SizedBox(height: 2.8.h),
                         Container(height: 1, color: AppColors.titleColor),
                         SizedBox(height: 2.5.h),
                         Row(
@@ -134,33 +132,33 @@ class _LoginState extends State<Login> {
                                 fontSize: 16.8.sp,
                                 color: AppColors.primary,
                                 decoration: TextDecoration.underline,
+                                fontWeight: FontWeight.w900,
                               ),
                             ),
                           ],
                         ),
+                        SizedBox(height: 6.3.h),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            customText(
+                              'Terms and Conditions',
+                              fontSize: 17.sp,
+                              color: AppColors.lightText,
+                            ),
+                            customText(
+                              'Privacy Policy',
+                              fontSize: 17.sp,
+                              color: AppColors.lightText,
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 2.h),
                       ],
                     ),
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 7.w, vertical: 2.h),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      customText(
-                        'Terms and Conditions',
-                        fontSize: 17.sp,
-                        color: AppColors.lightText,
-                      ),
-                      customText(
-                        'Privacy Policy',
-                        fontSize: 17.sp,
-                        color: AppColors.lightText,
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
           ],
         ),

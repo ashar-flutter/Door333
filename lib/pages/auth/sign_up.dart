@@ -31,7 +31,7 @@ class _SignUpState extends State<SignUp> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 6.w, top: 3.h),
+                  padding: EdgeInsets.only(left: 9.w, top: 3.h),
                   child: onPress(
                     onTap: () => Get.back(),
                     child: Icon(
@@ -52,17 +52,17 @@ class _SignUpState extends State<SignUp> {
                           'Register',
                           fontSize: 20.sp,
                           color: AppColors.primary,
-                          fontWeight: FontWeight.w800,
+                          fontWeight: FontWeight.w900,
                         ),
                         SizedBox(height: 0.8.h),
                         Wrap(
                           children: [
-                            customText('Create an ', fontSize: 16),
+                            customText('Create an ', fontSize: 16,
+                            ),
                             customText(
                               'account',
                               color: AppColors.primary,
-                              fontWeight: FontWeight.w600,
-                              decoration: TextDecoration.underline,
+                              fontWeight: FontWeight.w900,
                               fontSize: 15,
                             ),
                             customText(
@@ -92,14 +92,13 @@ class _SignUpState extends State<SignUp> {
                                         shape: BoxShape.circle,
                                         border: Border.all(
                                           color: AppColors.primary,
-                                          width: 1.5,
+                                          width: 1,
                                         ),
                                       ),
                                       child: Center(
-                                        child: Icon(
-                                          Icons.person_outline,
-                                          size: 5.h,
-                                          color: AppColors.primary,
+                                        child:Image.asset(
+                                          AppImage.person,
+                                          height: 4.h,
                                         ),
                                       ),
                                     ),
@@ -144,7 +143,7 @@ class _SignUpState extends State<SignUp> {
                                     fontSize: 17.sp,
                                     fontWeight: FontWeight.w600,
                                   ),
-                                  SizedBox(height: 1.h),
+                                  SizedBox(height: 1.6.h),
                                   textField('Ex.John'),
                                 ],
                               ),
@@ -159,7 +158,7 @@ class _SignUpState extends State<SignUp> {
                                     fontSize: 17.sp,
                                     fontWeight: FontWeight.w600,
                                   ),
-                                  SizedBox(height: 1.h),
+                                  SizedBox(height: 1.6.h),
                                   textField('Ex.Doe'),
                                 ],
                               ),
@@ -172,7 +171,7 @@ class _SignUpState extends State<SignUp> {
                           fontSize: 17.sp,
                           fontWeight: FontWeight.w600,
                         ),
-                        SizedBox(height: 1.h),
+                        SizedBox(height: 1.6.h),
                         textField(
                           'Ex.abc@example.com',
                           keyboardType: TextInputType.emailAddress,
@@ -191,7 +190,7 @@ class _SignUpState extends State<SignUp> {
                           obSecure: true,
                           prefixIcon: Icons.lock_outline,
                         ),
-                        SizedBox(height: 3.h),
+                        SizedBox(height: 2.8.h),
                         Row(
                           children: [
                             SizedBox(
@@ -223,8 +222,9 @@ class _SignUpState extends State<SignUp> {
                             ),
                           ],
                         ),
-                        SizedBox(height: 3.h),
+                        SizedBox(height: 2.4.h),
                         customButton(
+                          height: 6.4,
                           'Create Account',
                           () {},
                           textColor: Colors.white,

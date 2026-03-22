@@ -14,17 +14,20 @@ class _BoardingState extends State<Boarding> {
     {
       'image': AppImage.onBoard1,
       'title': 'Religious Posting',
-      'subtitle': 'Share your spiritual journey and connect deeply with your faith community.',
+      'subtitle':
+          'Share your spiritual journey and connect deeply with your faith community.',
     },
     {
       'image': AppImage.onBoard2,
       'title': 'Community of Love',
-      'subtitle': 'Join a supportive environment where kindness and helping others are core values.',
+      'subtitle':
+          'Join a supportive environment where kindness and helping others are core values.',
     },
     {
       'image': AppImage.onBoard3,
       'title': 'Trusted Marketplace',
-      'subtitle': 'A dedicated space for our community to exchange goods and services safely.',
+      'subtitle':
+          'A dedicated space for our community to exchange goods and services safely.',
     },
   ];
 
@@ -83,7 +86,7 @@ class _BoardingState extends State<Boarding> {
                       fit: BoxFit.contain,
                     ),
                   ),
-                  SizedBox(height: 5.h),
+                  SizedBox(height: 4.9.h),
                   AnimatedSwitcher(
                     duration: const Duration(milliseconds: 300),
                     child: Column(
@@ -91,16 +94,16 @@ class _BoardingState extends State<Boarding> {
                       children: [
                         customText(
                           onboardingData[currentIndex]['title']!,
-                          fontSize: 18.sp,
+                          fontSize: 18.2.sp,
                           fontWeight: FontWeight.w900,
                           textAlign: TextAlign.center,
                         ),
-                        SizedBox(height: 1.h),
+                        SizedBox(height: 1.8.h),
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 10.w),
                           child: customText(
                             onboardingData[currentIndex]['subtitle']!,
-                            fontSize: 17.sp,
+                            fontSize: 16.8.sp,
                             color: AppColors.lightText,
                             textAlign: TextAlign.center,
                           ),
@@ -108,7 +111,7 @@ class _BoardingState extends State<Boarding> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 13.h),
+                  SizedBox(height: 11.h),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 25),
                     child: customButton(

@@ -38,7 +38,7 @@ class _NavBarState extends State<NavBar> {
               BoxShadow(
                 color: Colors.black.withValues(alpha: 0.08),
                 blurRadius: 8,
-                offset: const Offset(0, -7),
+                offset: const Offset(0, -5),
               ),
             ],
           ),
@@ -68,8 +68,10 @@ class _NavBarState extends State<NavBar> {
                     customText(
                       items[index]["label"],
                       fontSize: 14,
-                      fontWeight: isActive ? FontWeight.w700 : FontWeight.w200,
-                      color: isActive ? AppColors.primary : AppColors.lightText,
+                      fontWeight: isActive ? FontWeight.w900 : FontWeight.w200,
+                      color: isActive
+                          ? AppColors.primary
+                          : Color(0xFF000000).withValues(alpha: 0.6),
                     ),
                   ],
                 ),

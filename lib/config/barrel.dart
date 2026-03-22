@@ -1,4 +1,3 @@
-
 // Material
 export  'package:flutter/material.dart';
 
@@ -38,6 +37,7 @@ export 'package:door333/pages/dashboard/market/product_detail/payment_method.dar
 export 'package:door333/pages/dashboard/market/product_detail/shipping_address.dart';
 export 'package:door333/pages/dashboard/market/product_detail/order_confirmed.dart';
 export 'package:door333/pages/dashboard/market/product_detail/order_summary.dart';
+export  'package:door333/pages/dashboard/home/create_post.dart';
 
 
 

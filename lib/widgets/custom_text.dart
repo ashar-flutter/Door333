@@ -13,7 +13,6 @@ Widget customText(
       TextAlign textAlign = TextAlign.left,
       double? wordSpacing,
       TextDecoration decoration = TextDecoration.none,
-      Color? decorationColor,
     }) {
   return AbsorbPointer(
     absorbing: onTap == null,
@@ -34,7 +33,7 @@ Widget customText(
             letterSpacing: letterSpacing,
             decoration: decoration,
             wordSpacing: wordSpacing,
-            decorationColor: decorationColor,
+            decorationColor:AppColors.primary,
           ),
         ),
       ),

@@ -37,6 +37,7 @@ class AppImage{
   static const String chat= "assets/icons/chat.png";
   static const String settings= "assets/icons/settings.png";
   static const String check= "assets/icons/check.png";
+  static const String person= "assets/icons/person.png";
 
 
 
