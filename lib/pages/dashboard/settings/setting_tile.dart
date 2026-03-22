@@ -1,7 +1,7 @@
 import '../../../config/barrel.dart';
 
 class SettingTile extends StatelessWidget {
-  final IconData icon;
+  final String image;
   final Color iconColor;
   final Color bgColor;
   final String title;
@@ -11,7 +11,7 @@ class SettingTile extends StatelessWidget {
 
   const SettingTile({
     super.key,
-    required this.icon,
+    required this.image,
     required this.iconColor,
     required this.bgColor,
     required this.title,
@@ -28,18 +28,20 @@ class SettingTile extends StatelessWidget {
         margin: EdgeInsets.only(bottom: 1.h),
         padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.8.h),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(18),
+          borderRadius: BorderRadius.circular(15),
           border: Border.all(color: Colors.grey.shade300),
         ),
         child: Row(
           children: [
             Container(
-              padding: EdgeInsets.all(0.8.h),
-              decoration: BoxDecoration(
-                color: bgColor,
-                shape: BoxShape.circle,
+              padding: EdgeInsets.all(1.h),
+              decoration: BoxDecoration(color: bgColor, shape: BoxShape.circle),
+              child: Image.asset(
+                image,
+                height: 2.4.h,
+                width: 2.4.h,
+                color: iconColor,
               ),
-              child: Icon(icon, color: iconColor, size: 2.3.h),
             ),
             SizedBox(width: 3.w),
             Expanded(
@@ -48,17 +50,26 @@ class SettingTile extends StatelessWidget {
                 children: [
                   customText(
                     title,
-                    fontSize: 17.sp,
-                    fontWeight: FontWeight.w600,
-                    color: isRed ?Color(0xFFEF4444): AppColors.titleColor,
+                    fontSize: 17.3.sp,
+                    color: isRed
+                        ? const Color(0xFFEF4444)
+                        : AppColors.titleColor,
                   ),
                   if (subtitle.isNotEmpty)
-                    customText(subtitle, fontSize: 16.sp, color: Colors.grey),
+                    customText(
+                      subtitle,
+                      fontSize: 17.sp,
+                      color: AppColors.lightText,
+                    ),
                 ],
               ),
             ),
             if (!isRed)
-              Icon(Icons.arrow_forward_ios, size: 1.8.h, color: AppColors.titleColor),
+              Icon(
+                Icons.arrow_forward_ios,
+                size: 1.7.h,
+                color: AppColors.titleColor,
+              ),
           ],
         ),
       ),

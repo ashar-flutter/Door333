@@ -147,7 +147,7 @@ Future<void> showCustomPopup(
                     onExtra ?? () => Navigator.pop(ctx),
                     backgroundColor: Colors.white,
                     textColor: AppColors.primary,
-                    borderColor: Colors.grey.shade300,
+                    borderColor: AppColors.primary,
                   ),
                 ],
               ],

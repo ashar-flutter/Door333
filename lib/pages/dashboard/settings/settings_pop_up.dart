@@ -99,7 +99,6 @@ void showLogoutPopup(BuildContext context) {
     },
     extraButton: 'No',
     onExtra: () => Navigator.pop(context),
-    slideFromRight: true,
   );
 }
 
@@ -113,6 +112,6 @@ void showDeleteAccountPopup(BuildContext context) {
     onButton: () => Navigator.pop(context),
     extraButton: 'Cancel',
     onExtra: () => Navigator.pop(context),
-    buttonColor: Colors.red,
+    buttonColor: Color(0xFFEF4444),
   );
 }

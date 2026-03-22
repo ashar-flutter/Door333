@@ -40,6 +40,11 @@ class AppImage{
   static const String person= "assets/icons/person.png";
   static const String sendSms= "assets/icons/send_message.png";
 
+  static const String delete= "assets/icons/delete_account.png";
+  static const String logout= "assets/icons/logout.png";
+  static const String name= "assets/icons/name.png";
+  static const String password= "assets/icons/password.png";
+
 
 
 
