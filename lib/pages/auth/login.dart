@@ -78,8 +78,7 @@ class _LoginState extends State<Login> {
                       children: [
                         customText(
                           'Email',
-                          fontSize: 17.sp,
-                          fontWeight: FontWeight.w600,
+                          fontSize: 16.5.sp,
                         ),
                         SizedBox(height: 1.6.h),
                         textField(
@@ -90,8 +89,7 @@ class _LoginState extends State<Login> {
                         SizedBox(height: 3.h),
                         customText(
                           'Your Password',
-                          fontSize: 17.sp,
-                          fontWeight: FontWeight.w600,
+                          fontSize: 16.5.sp,
                         ),
                         SizedBox(height: 1.6.h),
                         textField(
@@ -105,7 +103,7 @@ class _LoginState extends State<Login> {
                           onTap: () => Get.to(ForgetPassword()),
                           child: customText(
                             'Forgot Password?',
-                            fontSize: 17.sp,
+                            fontSize: 16.5.sp,
                             color: AppColors.primary,
                             decoration: TextDecoration.underline,
                           ),
@@ -122,14 +120,14 @@ class _LoginState extends State<Login> {
                           children: [
                             customText(
                               "Don't have an account?  ",
-                              fontSize: 17.sp,
+                              fontSize: 16.5.sp,
                               fontWeight: FontWeight.w300,
                             ),
                             onPress(
                               onTap: () => Get.to(SignUp()),
                               child: customText(
                                 'Register',
-                                fontSize: 16.8.sp,
+                                fontSize: 16.5.sp,
                                 color: AppColors.primary,
                                 decoration: TextDecoration.underline,
                                 fontWeight: FontWeight.w900,
@@ -141,15 +139,22 @@ class _LoginState extends State<Login> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            customText(
-                              'Terms and Conditions',
-                              fontSize: 17.sp,
-                              color: AppColors.lightText,
+                            onPress(
+                              onTap: () => Get.to(TermsAndConditions()),
+
+                              child: customText(
+                                'Terms and Conditions',
+                                fontSize: 16.sp,
+                                color: AppColors.lightText,
+                              ),
                             ),
-                            customText(
-                              'Privacy Policy',
-                              fontSize: 17.sp,
-                              color: AppColors.lightText,
+                            onPress(
+                              onTap: () => Get.to(PrivacyPolicy()),
+                              child: customText(
+                                'Privacy Policy',
+                                fontSize: 16.sp,
+                                color: AppColors.lightText,
+                              ),
                             ),
                           ],
                         ),

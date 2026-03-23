@@ -46,25 +46,25 @@ class _AuthPageState extends State<AuthPage> {
                       children: [
                         customText(
                           'Welcome to',
-                          fontSize: 18.7.sp,
+                          fontSize: 18.5.sp,
                         ),
                         SizedBox(height: 0.5.h),
                         customText(
                           'Door333',
-                          fontSize: 20.sp,
+                          fontSize: 19.5.sp,
                           color: AppColors.primary,
                           fontWeight: FontWeight.w900,
                         ),
                         SizedBox(height: 1.h),
                         customText(
                           'A door back to faith, opened with love,\nnot condemnation.',
-                          fontSize: 16.9.sp,
+                          fontSize: 16.5.sp,
 
                         ),
                         SizedBox(height: 7.h),
                         customText(
                           "Let's Get Started...",
-                          fontSize: 17.3.sp,
+                          fontSize: 17.sp,
                         ),
                         SizedBox(height: 1.5.h),
                         customButton(
@@ -83,13 +83,13 @@ class _AuthPageState extends State<AuthPage> {
                           children: [
                             customText(
                               'Already have an account? ',
-                              fontSize: 17.3.sp,
+                              fontSize: 16.sp,
                             ),
                             onPress(
                               onTap: () => Get.to(Login()),
                               child: customText(
                                 'Login',
-                                fontSize: 17.sp,
+                                fontSize: 16.sp,
                                 color: AppColors.primary,
                                 fontWeight: FontWeight.w900,
                                 decoration: TextDecoration.underline,
@@ -108,13 +108,13 @@ class _AuthPageState extends State<AuthPage> {
                     children: [
                       customText(
                         'Terms & Conditions',
-                        fontSize: 17.sp,
+                        fontSize: 16.sp,
                         color: AppColors.lightText,
                         fontWeight: FontWeight.w200,
                       ),
                       customText(
                         'Privacy Policy',
-                        fontSize: 17.sp,
+                        fontSize: 16.sp,
                         color: AppColors.lightText,
                         fontWeight: FontWeight.w200,
                       ),

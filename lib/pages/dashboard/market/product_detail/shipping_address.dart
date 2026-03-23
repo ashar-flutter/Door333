@@ -33,16 +33,13 @@ class _ShippingAddressState extends State<ShippingAddress> {
                                 onTap: () => Get.back(),
                                 child: Icon(
                                   Icons.arrow_back_ios,
-                                  size: 1.9.h,
-                                  color: AppColors.titleColor,
+                                  size: 1.6.h,
                                 ),
                               ),
                               SizedBox(width: 4.w),
                               customText(
                                 'Shipping Address',
-                                fontSize: 18.sp,
-                                fontWeight: FontWeight.w100,
-                                color: AppColors.titleColor,
+                                fontSize: 17.5.sp,
                               ),
                             ],
                           ),
@@ -66,15 +63,11 @@ class _ShippingAddressState extends State<ShippingAddress> {
                           SizedBox(height: 2.h),
                           customText(
                             'Street Address',
-                            fontSize: 17.sp,
-                            fontWeight: FontWeight.w600,
-                            color: AppColors.titleColor,
+                            fontSize: 16.5.sp,
                           ),
                           SizedBox(height: 1.h),
-                          textField(
+                         popUpField(
                             '123 Main St',
-                            fillColor: Colors.transparent,
-                            enableBorderColor: Colors.grey.shade300,
                           ),
                           SizedBox(height: 2.h),
 
@@ -86,15 +79,11 @@ class _ShippingAddressState extends State<ShippingAddress> {
                                   children: [
                                     customText(
                                       'City',
-                                      fontSize: 17.sp,
-                                      fontWeight: FontWeight.w600,
-                                      color: AppColors.titleColor,
+                                      fontSize: 16.5.sp,
                                     ),
                                     SizedBox(height: 1.h),
-                                    textField(
+                                    popUpField(
                                       'New York',
-                                      fillColor: Colors.transparent,
-                                      enableBorderColor: Colors.grey.shade300,
                                     ),
                                   ],
                                 ),
@@ -106,15 +95,11 @@ class _ShippingAddressState extends State<ShippingAddress> {
                                   children: [
                                     customText(
                                       'State',
-                                      fontSize: 17.sp,
-                                      fontWeight: FontWeight.w600,
-                                      color: AppColors.titleColor,
+                                      fontSize: 16.5.sp,
                                     ),
                                     SizedBox(height: 1.h),
-                                    textField(
+                                    popUpField(
                                       'NY',
-                                      fillColor: Colors.transparent,
-                                      enableBorderColor: Colors.grey.shade300,
                                     ),
                                   ],
                                 ),
@@ -125,16 +110,12 @@ class _ShippingAddressState extends State<ShippingAddress> {
 
                           customText(
                             'ZIP Code',
-                            fontSize: 17.sp,
-                            fontWeight: FontWeight.w600,
-                            color: AppColors.titleColor,
+                            fontSize: 16.5.sp,
                           ),
                           SizedBox(height: 1.h),
-                          textField(
+                          popUpField(
                             '10001',
                             keyboardType: TextInputType.number,
-                            fillColor: Colors.transparent,
-                            enableBorderColor: Colors.grey.shade300,
                           ),
                           SizedBox(height: 3.h),
 
@@ -159,15 +140,17 @@ class _ShippingAddressState extends State<ShippingAddress> {
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
+                                    SizedBox(height: 0.7.h,),
                                     customText(
                                       'Standard Shipping',
-                                      fontSize: 17.6.sp,
-                                      fontWeight: FontWeight.w600,
+                                      fontSize: 16.8.sp,
                                       color: Color(0xFF1C398E),
                                     ),
+                                    SizedBox(height: 0.9.h,),
+
                                     customText(
                                       'Estimated delivery: 3-5 business days',
-                                      fontSize: 16.sp,
+                                      fontSize: 15.5.sp,
                                       color: Color(0xFF155DFC),
                                     ),
                                   ],

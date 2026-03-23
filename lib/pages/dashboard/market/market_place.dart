@@ -105,7 +105,6 @@ class _MarketPlaceState extends State<MarketPlace> {
                     'Search items...',
                     prefixIcon: Icons.search,
                     focusBorderColor: Colors.grey.shade400,
-                    enableBorderColor: Colors.grey.shade300,
                     fillColor: Colors.grey.shade50,
                   ),
                 ),

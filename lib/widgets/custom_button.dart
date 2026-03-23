@@ -6,7 +6,7 @@ Widget customButton(
   String text,
   Function onTap, {
   double height = 7,
-  double fontSize = 15.3,
+  double fontSize = 14.8,
   double width = 100,
   Color backgroundColor = AppColors.primary,
   Color textColor = AppColors.lightText,
@@ -36,13 +36,13 @@ Widget customButton(
             customText(
               text,
               color: textColor,
-              fontWeight: FontWeight.w900,
+              fontWeight: FontWeight.w800,
               fontSize: fontSize,
             ),
             if (icon != null && iconPosition == IconPosition.end) ...[
               SizedBox(width: 3.w),
               Icon(icon, color: textColor,
-              size: 19,
+              size: 17,
               ),
             ],
           ],

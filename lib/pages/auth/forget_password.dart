@@ -47,20 +47,19 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                       SizedBox(height: 4.h),
                       customText(
                         'Forgot Password?',
-                        fontSize: 19.sp,
+                        fontSize: 18.8.sp,
                         color: AppColors.primary,
                         fontWeight: FontWeight.w900,
                       ),
                       SizedBox(height: 1.h),
                       customText(
                         'Recover you password if you have forgot the password!',
-                        fontSize: 17.sp,
+                        fontSize: 16.8.sp,
                       ),
                       SizedBox(height: 4.h),
                       customText(
                         'Email',
-                        fontSize: 17.sp,
-                        fontWeight: FontWeight.w600,
+                        fontSize: 16.5.sp,
                       ),
                       SizedBox(height: 1.6.h),
                       textField(

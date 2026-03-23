@@ -40,41 +40,6 @@ class _MainChatPageState extends State<MainChatPage> {
     },
   ];
 
-  Widget _searchField() {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(19),
-        border: Border.all(color: Colors.grey.shade300, width: 1.1),
-      ),
-      height: 6.h,
-      width: double.infinity,
-      child: TextField(
-        decoration: InputDecoration(
-          fillColor: Color(0xFFE2E8F0),
-          prefixIcon: Icon(
-            Icons.search_outlined,
-            color: AppColors.lightText,
-            size: 2.8.h,
-          ),
-          hintText: "Search person by name...",
-          hintStyle: TextStyle(
-            fontSize: 15.7.sp,
-            color: AppColors.hintText,
-            fontFamily: "Hellix",
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(17),
-            borderSide: BorderSide(color: Colors.grey.shade100),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(17),
-            borderSide: BorderSide(color: AppColors.primary),
-          ),
-        ),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -109,7 +74,7 @@ class _MainChatPageState extends State<MainChatPage> {
                       SizedBox(width: 3.2.w),
                       customText(
                         'Chats',
-                        fontSize: 19.5.sp,
+                        fontSize: 19.sp,
                         color: AppColors.primary,
                         fontWeight: FontWeight.w800,
                       ),
@@ -119,7 +84,7 @@ class _MainChatPageState extends State<MainChatPage> {
                 SizedBox(height: 1.1.h),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 6.w),
-                  child: _searchField(),
+                  child: searchField(),
                 ),
                 SizedBox(height: 4.h),
 
@@ -164,8 +129,9 @@ class _MainChatPageState extends State<MainChatPage> {
                           SizedBox(height: 0.5.h),
                           customText(
                             stories[i]['name'],
-                            fontSize: 17.sp,
+                            fontSize: 16.8.sp,
                             color: AppColors.black,
+                            fontWeight: FontWeight.w600
                           ),
                         ],
                       ),
@@ -226,7 +192,7 @@ class _MainChatPageState extends State<MainChatPage> {
                                       children: [
                                         customText(
                                           c['name'],
-                                          fontSize: 17.sp,
+                                          fontSize: 16.8.sp,
                                           fontWeight: FontWeight.w600,
                                         ),
                                         customText(

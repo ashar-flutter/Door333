@@ -50,9 +50,9 @@ class _SignUpState extends State<SignUp> {
                         SizedBox(height: 4.h),
                         customText(
                           'Register',
-                          fontSize: 20.sp,
+                          fontSize: 19.sp,
                           color: AppColors.primary,
-                          fontWeight: FontWeight.w900,
+                          fontWeight: FontWeight.w800,
                         ),
                         SizedBox(height: 0.8.h),
                         Wrap(
@@ -115,17 +115,17 @@ class _SignUpState extends State<SignUp> {
                                         child: Icon(
                                           Icons.file_upload_outlined,
                                           color: Colors.white,
-                                          size: 1.8.h,
+                                          size: 1.9.h,
                                         ),
                                       ),
                                     ),
                                   ],
                                 ),
                               ),
-                              SizedBox(height: 1.h),
+                              SizedBox(height: 1.6.h),
                               customText(
                                 'Tap to upload photo',
-                                fontSize: 17.3.sp,
+                                fontSize: 17.sp,
                                 color: AppColors.primary,
                               ),
                             ],
@@ -140,8 +140,7 @@ class _SignUpState extends State<SignUp> {
                                 children: [
                                   customText(
                                     'First Name',
-                                    fontSize: 17.sp,
-                                    fontWeight: FontWeight.w600,
+                                    fontSize: 16.5.sp,
                                   ),
                                   SizedBox(height: 1.6.h),
                                   textField('Ex.John'),
@@ -155,8 +154,7 @@ class _SignUpState extends State<SignUp> {
                                 children: [
                                   customText(
                                     'Last Name',
-                                    fontSize: 17.sp,
-                                    fontWeight: FontWeight.w600,
+                                    fontSize: 16.5.sp,
                                   ),
                                   SizedBox(height: 1.6.h),
                                   textField('Ex.Doe'),
@@ -168,8 +166,7 @@ class _SignUpState extends State<SignUp> {
                         SizedBox(height: 2.5.h),
                         customText(
                           'Email',
-                          fontSize: 17.sp,
-                          fontWeight: FontWeight.w600,
+                          fontSize: 16.5.sp,
                         ),
                         SizedBox(height: 1.6.h),
                         textField(
@@ -180,8 +177,7 @@ class _SignUpState extends State<SignUp> {
                         SizedBox(height: 2.5.h),
                         customText(
                           'Your Password',
-                          fontSize: 17.sp,
-                          fontWeight: FontWeight.w600,
+                          fontSize: 16.5.sp,
                         ),
                         SizedBox(height: 1.h),
                         textField(
@@ -235,14 +231,14 @@ class _SignUpState extends State<SignUp> {
                           children: [
                             customText(
                               'Already have an account?  ',
-                              fontSize: 16.3.sp,
+                              fontSize: 16.5.sp,
                               fontWeight: FontWeight.w300,
                             ),
                             onPress(
                               onTap: () => Get.back(),
                               child: customText(
                                 'Login',
-                                fontSize: 16.3.sp,
+                                fontSize: 16.5.sp,
                                 color: AppColors.primary,
                                 fontWeight: FontWeight.w700,
                                 decoration: TextDecoration.underline,

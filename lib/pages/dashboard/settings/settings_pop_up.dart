@@ -14,14 +14,14 @@ void showChangeNamePopup(BuildContext context) {
       children: [
         SizedBox(height: 1.2.h),
 
-        customText('First Name', fontSize: 16.sp, fontWeight: FontWeight.w500),
+        customText('First Name', fontSize: 16.7.sp),
         SizedBox(height: 1.h),
-        textField('Jane', fillColor: Colors.transparent, enableBorderColor: Colors.grey.shade300),
-        SizedBox(height: 2.h),
-        customText('Last Name', fontSize: 16.sp, fontWeight: FontWeight.w500),
+        popUpField('Jane'),
+        SizedBox(height: 1.6.h),
+        customText('Last Name', fontSize: 16.7.sp),
         SizedBox(height: 1.h),
-        textField('Doe', fillColor: Colors.transparent, enableBorderColor: Colors.grey.shade300),
-        SizedBox(height: 7.h),
+        popUpField('Doe'),
+        SizedBox(height: 6.h),
       ],
     ),
   );
@@ -41,48 +41,30 @@ void showChangePasswordPopup(BuildContext context) {
       children: [
         SizedBox(height: 1.3.h),
 
-        customText(
-          'Current Password',
-          fontSize: 16.sp,
-          fontWeight: FontWeight.w500,
-        ),
+        customText('Current Password', fontSize: 16.7.sp),
         SizedBox(height: 1.h),
-        textField(
+        popUpField(
           'Enter current password',
           keyboardType: TextInputType.visiblePassword,
           obSecure: true,
-          fillColor: Colors.transparent,
-          enableBorderColor: Colors.grey.shade300,
         ),
         SizedBox(height: 2.h),
-        customText(
-          'New Password',
-          fontSize: 16.sp,
-          fontWeight: FontWeight.w500,
-        ),
+        customText('New Password', fontSize: 16.7.sp),
         SizedBox(height: 1.h),
-        textField(
+        popUpField(
           'Enter new password',
           keyboardType: TextInputType.visiblePassword,
           obSecure: true,
-          fillColor: Colors.transparent,
-          enableBorderColor: Colors.grey.shade300,
         ),
         SizedBox(height: 2.h),
-        customText(
-          'Confirm Password',
-          fontSize: 16.sp,
-          fontWeight: FontWeight.w500,
-        ),
+        customText('Confirm Password', fontSize: 16.7.sp),
         SizedBox(height: 1.h),
-        textField(
+        popUpField(
           'Confirm new password',
           keyboardType: TextInputType.visiblePassword,
           obSecure: true,
-          fillColor: Colors.transparent,
-          enableBorderColor: Colors.grey.shade300,
         ),
-        SizedBox(height: 4.3.h),
+        SizedBox(height: 4.5.h),
       ],
     ),
   );
@@ -107,11 +89,11 @@ void showDeleteAccountPopup(BuildContext context) {
     context,
     title: 'Delete Account',
     message:
-    'Are you absolutely sure? This action cannot be undone. This will permanently delete your account and remove your data from our servers.',
+        'Are you absolutely sure? This action cannot be undone. This will permanently delete your account and remove your data from our servers.',
     buttonText: 'Delete Account',
     onButton: () => Navigator.pop(context),
     extraButton: 'Cancel',
     onExtra: () => Navigator.pop(context),
-    buttonColor: Color(0xFFEF4444),
+    buttonColor: const Color(0xFFEF4444),
   );
 }

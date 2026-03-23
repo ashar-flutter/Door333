@@ -40,7 +40,7 @@ class _ProductDetailState extends State<ProductDetail> {
                           fit: BoxFit.cover,
                         ),
                         Positioned(
-                          top: 2.h,
+                          top: 4.h,
                           left: 4.w,
                           child: onPress(
                             onTap: () => Get.back(),
@@ -52,7 +52,7 @@ class _ProductDetailState extends State<ProductDetail> {
                               ),
                               child: Icon(
                                 Icons.arrow_back,
-                                size: 2.h,
+                                size: 1.6.h,
                                 color: Colors.white,
                               ),
                             ),
@@ -70,14 +70,13 @@ class _ProductDetailState extends State<ProductDetail> {
                         children: [
                           customText(
                             widget.title,
-                            fontSize: 19.sp,
+                            fontSize: 18.sp,
                             fontWeight: FontWeight.w800,
-                            color: AppColors.titleColor,
                           ),
                           SizedBox(height: 0.5.h),
                           customText(
                             widget.price,
-                            fontSize: 17.8.sp,
+                            fontSize: 17.3.sp,
                             fontWeight: FontWeight.w700,
                             color: AppColors.primary,
                           ),
@@ -96,8 +95,9 @@ class _ProductDetailState extends State<ProductDetail> {
                               vertical: 1.5.h,
                             ),
                             decoration: BoxDecoration(
-                              border: Border.all(color: Colors.grey.shade300,
-                              width: 2
+                              border: Border.all(
+                                color: Colors.grey.shade300,
+                                width: 2,
                               ),
                               borderRadius: BorderRadius.circular(16),
                             ),
@@ -108,10 +108,10 @@ class _ProductDetailState extends State<ProductDetail> {
                                   children: [
                                     CircleAvatar(
                                       radius: 2.2.h,
-                                      backgroundColor: AppColors.primary,
+                                      backgroundColor: Colors.grey.shade200,
                                       child: customText(
                                         'J',
-                                        color: Colors.white,
+                                        color: AppColors.black,
                                         fontWeight: FontWeight.w700,
                                       ),
                                     ),
@@ -139,8 +139,7 @@ class _ProductDetailState extends State<ProductDetail> {
                                   () {},
                                   width: 28,
                                   height: 4.5,
-                                  backgroundColor: Colors.white,
-                                  textColor: AppColors.lightText,
+                                  backgroundColor: Colors.grey.shade100,
                                   borderColor: Colors.grey.shade300,
                                   fontSize: 14,
                                   borderRadius: 10,
@@ -152,9 +151,8 @@ class _ProductDetailState extends State<ProductDetail> {
 
                           customText(
                             'Description',
-                            fontSize: 18.sp,
-                            fontWeight: FontWeight.w200,
-                            color: AppColors.titleColor,
+                            fontSize: 17.sp,
+                            fontWeight: FontWeight.w700,
                           ),
                           SizedBox(height: 0.8.h),
                           customText(
@@ -168,7 +166,6 @@ class _ProductDetailState extends State<ProductDetail> {
                             'Seller Information',
                             fontSize: 17.sp,
                             fontWeight: FontWeight.w700,
-                            color: AppColors.titleColor,
                           ),
                           SizedBox(height: 1.h),
                           Row(
@@ -180,7 +177,6 @@ class _ProductDetailState extends State<ProductDetail> {
                                       'Verified',
                                       fontSize: 16.sp,
                                       fontWeight: FontWeight.w600,
-                                      color: AppColors.titleColor,
                                     ),
                                     customText(
                                       'Identity',

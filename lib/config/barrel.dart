@@ -1,10 +1,14 @@
 // Material
 export  'package:flutter/material.dart';
+export  'dart:io' hide HeaderValue;
+
+
 
 //config.....
 export 'package:door333/config/images.dart';
 export  '../config/colors.dart';
 export  '../config/on_press.dart';
+export 'package:door333/config/image_picker_func.dart';
 
 
 //packages...
@@ -38,6 +42,8 @@ export 'package:door333/pages/dashboard/market/product_detail/shipping_address.d
 export 'package:door333/pages/dashboard/market/product_detail/order_confirmed.dart';
 export 'package:door333/pages/dashboard/market/product_detail/order_summary.dart';
 export  'package:door333/pages/dashboard/home/create_post.dart';
+export  'package:door333/pages/auth/contact/privacy_policy.dart';
+export  'package:door333/pages/auth/contact/terms_and_conditions.dart';
 
 
 
@@ -47,5 +53,6 @@ export 'package:door333/widgets/custom_button.dart';
 export 'package:door333/widgets/custom_text.dart';
 export 'package:door333/widgets/custom_text_field.dart';
 export 'package:door333/widgets/custom_pop_up.dart';
-export 'package:door333/widgets/image_picker_widget.dart';
+export  'package:door333/widgets/pop_up_field.dart';
+export 'package:door333/pages/dashboard/chat/search_field.dart';
 

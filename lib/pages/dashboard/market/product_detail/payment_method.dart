@@ -33,16 +33,13 @@ class _PaymentMethodState extends State<PaymentMethod> {
                                 onTap: () => Get.back(),
                                 child: Icon(
                                   Icons.arrow_back_ios,
-                                  size: 1.9.h,
-                                  color: AppColors.titleColor,
+                                  size: 1.6.h,
                                 ),
                               ),
                               SizedBox(width: 4.w),
                               customText(
                                 'Payment Method',
-                                fontSize: 18.sp,
-                                fontWeight: FontWeight.w100,
-                                color: AppColors.titleColor,
+                                fontSize: 17.5.sp,
                               ),
                             ],
                           ),
@@ -66,27 +63,23 @@ class _PaymentMethodState extends State<PaymentMethod> {
                           SizedBox(height: 2.h),
                           customText(
                             'Cardholder Name',
-                            fontSize: 17.sp,
-                            fontWeight: FontWeight.w600,
-                            color: AppColors.titleColor,
+                            fontSize: 16.5.sp,
                           ),
                           SizedBox(height: 1.h),
-                          textField('John Doe', fillColor: Colors.transparent, enableBorderColor: Colors.grey.shade300),
+                          popUpField('John Doe',
+
+                          ),
                           SizedBox(height: 2.h),
 
                           customText(
                             'Card Number',
-                            fontSize: 17.sp,
-                            fontWeight: FontWeight.w600,
-                            color: AppColors.titleColor,
+                            fontSize: 16.5.sp,
                           ),
                           SizedBox(height: 1.h),
-                          textField(
+                         popUpField(
                             '0000 0000 0000 0000',
                             keyboardType: TextInputType.number,
                             suffixIcon: Icons.credit_card,
-                            fillColor: Colors.transparent,
-                            enableBorderColor: Colors.grey.shade300,
                           ),
                           SizedBox(height: 2.h),
 
@@ -98,16 +91,12 @@ class _PaymentMethodState extends State<PaymentMethod> {
                                   children: [
                                     customText(
                                       'Expiry Date',
-                                      fontSize: 17.sp,
-                                      fontWeight: FontWeight.w600,
-                                      color: AppColors.titleColor,
+                                      fontSize: 16.5.sp,
                                     ),
                                     SizedBox(height: 1.h),
-                                    textField(
+                                    popUpField(
                                       'MM/YY',
                                       keyboardType: TextInputType.datetime,
-                                      fillColor: Colors.transparent,
-                                      enableBorderColor: Colors.grey.shade300,
                                     ),
                                   ],
                                 ),
@@ -119,16 +108,12 @@ class _PaymentMethodState extends State<PaymentMethod> {
                                   children: [
                                     customText(
                                       'CVC',
-                                      fontSize: 17.sp,
-                                      fontWeight: FontWeight.w600,
-                                      color: AppColors.titleColor,
+                                      fontSize: 16.5.sp,
                                     ),
                                     SizedBox(height: 1.h),
-                                    textField(
+                                    popUpField(
                                       '123',
                                       keyboardType: TextInputType.number,
-                                      fillColor: Colors.transparent,
-                                      enableBorderColor: Colors.grey.shade300,
                                     ),
                                   ],
                                 ),
@@ -142,13 +127,13 @@ class _PaymentMethodState extends State<PaymentMethod> {
                             children: [
                               Icon(
                                 Icons.lock_outline,
-                                size: 2.h,
+                                size: 1.5.h,
                                 color: AppColors.lightText,
                               ),
                               SizedBox(width: 2.w),
                               customText(
                                 'Payments are secure and encrypted',
-                                fontSize: 16.7.sp,
+                                fontSize: 16.sp,
                                 color: AppColors.lightText,
                               ),
                             ],

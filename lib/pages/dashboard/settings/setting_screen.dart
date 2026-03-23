@@ -47,7 +47,7 @@ class _SettingScreenState extends State<SettingScreen> {
                             SizedBox(width: 3.2.w),
                             customText(
                               'Settings',
-                              fontSize: 19.5.sp,
+                              fontSize: 19.sp,
                               color: AppColors.primary,
                               fontWeight: FontWeight.w800,
                             ),
@@ -78,7 +78,7 @@ class _SettingScreenState extends State<SettingScreen> {
                                     bottom: 0,
                                     right: 4,
                                     child: Container(
-                                      padding: EdgeInsets.all(1.3.h),
+                                      padding: EdgeInsets.all(1.1.h),
                                       decoration: BoxDecoration(
                                         color: const Color(0xFF0DA2E7),
                                         shape: BoxShape.circle,
@@ -88,14 +88,14 @@ class _SettingScreenState extends State<SettingScreen> {
                                               alpha: 0.3,
                                             ),
                                             blurRadius: 6,
-                                            offset: Offset(0, 2),
+                                            offset: Offset(0, 4),
                                           ),
                                         ],
                                       ),
                                       child: Icon(
                                         Icons.camera_alt_outlined,
                                         color: Colors.white,
-                                        size: 1.9.h,
+                                        size: 2.2.h,
                                       ),
                                     ),
                                   ),
@@ -137,7 +137,7 @@ class _SettingScreenState extends State<SettingScreen> {
                         SizedBox(height: 5.h),
                         Divider(height: 1.h, color: Colors.grey.shade300),
                         SizedBox(height: 3.6.h),
-                        customText('Personal Information', fontSize: 17.4.sp),
+                        customText('Personal Information', fontSize: 16.6.sp),
                         SizedBox(height: 2.h),
                         SettingTile(
                           image: AppImage.name,
@@ -148,7 +148,7 @@ class _SettingScreenState extends State<SettingScreen> {
                           onTap: () => showChangeNamePopup(context),
                         ),
                         SizedBox(height: 2.3.h),
-                        customText('Security', fontSize: 17.4.sp),
+                        customText('Security', fontSize: 16.6.sp),
                         SizedBox(height: 2.h),
                         SettingTile(
                           image: AppImage.password,
@@ -159,7 +159,7 @@ class _SettingScreenState extends State<SettingScreen> {
                           onTap: () => showChangePasswordPopup(context),
                         ),
                         SizedBox(height: 2.3.h),
-                        customText('Actions', fontSize: 17.4.sp),
+                        customText('Actions', fontSize: 16.6.sp),
                         SizedBox(height: 2.h),
                         SettingTile(
                           image: AppImage.logout,
@@ -178,11 +178,11 @@ class _SettingScreenState extends State<SettingScreen> {
                           isRed: true,
                           onTap: () => showDeleteAccountPopup(context),
                         ),
-                        SizedBox(height: 5.4.h),
+                        SizedBox(height: 7.h),
                         Center(
                           child: customText(
                             'Door333 V1.0.0',
-                            fontSize: 17.sp,
+                            fontSize: 16.4.sp,
                             color: AppColors.lightText,
                           ),
                         ),

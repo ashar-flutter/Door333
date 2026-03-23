@@ -33,16 +33,14 @@ class _OrderConfirmedState extends State<OrderConfirmed> {
                                 onTap: () => Get.back(),
                                 child: Icon(
                                   Icons.arrow_back_ios,
-                                  size: 1.9.h,
+                                  size: 1.6.h,
                                   color: AppColors.titleColor,
                                 ),
                               ),
                               SizedBox(width: 4.w),
                               customText(
                                 'Order Confirmed',
-                                fontSize: 18.sp,
-                                fontWeight: FontWeight.w100,
-                                color: AppColors.titleColor,
+                                fontSize: 17.5.sp,
                               ),
                             ],
                           ),
@@ -62,11 +60,11 @@ class _OrderConfirmedState extends State<OrderConfirmed> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          SizedBox(height: 8.h),
+                          SizedBox(height: 7.h),
                           Center(
                             child: Container(
-                              height: 11.h,
-                              width: 11.h,
+                              height: 10.h,
+                              width: 10.h,
                               decoration: BoxDecoration(
                                 color: AppColors.lightGreen,
                                 shape: BoxShape.circle,
@@ -74,32 +72,31 @@ class _OrderConfirmedState extends State<OrderConfirmed> {
                               child: Center(
                                 child: Image.asset(
                                   AppImage.check,
-                                  height: 5.2.h,
-                                  width: 5.2.h,
+                                  height: 5.1.h,
+                                  width: 5.1.h,
                                   color: AppColors.green,
                                 ),
                               ),
                             ),
                           ),
-                          SizedBox(height: 2.5.h),
+                          SizedBox(height: 2.6.h),
                           Center(
                             child: customText(
                               'Payment Successful!',
-                              fontSize: 17.6.sp,
+                              fontSize: 17.2.sp,
                               fontWeight: FontWeight.w900,
-                              color: AppColors.titleColor,
                             ),
                           ),
-                          SizedBox(height: 1.4.h),
+                          SizedBox(height: 1.h),
                           Center(
                             child: customText(
                               'Your order has been placed successfully.',
-                              fontSize: 17.sp,
+                              fontSize: 16.4.sp,
                               color: AppColors.lightText,
                               textAlign: TextAlign.center,
                             ),
                           ),
-                          SizedBox(height: 4.h),
+                          SizedBox(height: 3.5.h),
                         ],
                       ),
                     ),
@@ -120,14 +117,12 @@ class _OrderConfirmedState extends State<OrderConfirmed> {
                               children: [
                                 customText(
                                   'Transaction ID',
-                                  fontSize: 17.sp,
+                                  fontSize: 16.5.sp,
                                   color: AppColors.lightText,
                                 ),
                                 customText(
                                   '#TRX-CYRIL3VIV',
-                                  fontSize: 17.sp,
-                                  fontWeight: FontWeight.w600,
-                                  color: AppColors.titleColor,
+                                  fontSize: 16.2.sp,
                                 ),
                               ],
                             ),
@@ -137,14 +132,13 @@ class _OrderConfirmedState extends State<OrderConfirmed> {
                               children: [
                                 customText(
                                   'Amount Paid',
-                                  fontSize: 17.sp,
+                                  fontSize: 16.5.sp,
                                   color: AppColors.lightText,
                                 ),
                                 customText(
                                   '\$102.50',
-                                  fontSize: 17.sp,
-                                  fontWeight: FontWeight.w600,
-                                  color: AppColors.titleColor,
+                                  fontSize: 16.2.sp,
+                                  fontWeight: FontWeight.w800,
                                 ),
                               ],
                             ),

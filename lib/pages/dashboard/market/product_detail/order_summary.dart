@@ -43,16 +43,13 @@ class _OrderSummaryState extends State<OrderSummary> {
                                 onTap: () => Get.back(),
                                 child: Icon(
                                   Icons.arrow_back_ios,
-                                  size: 1.9.h,
-                                  color: AppColors.titleColor,
+                                  size: 1.6.h,
                                 ),
                               ),
                               SizedBox(width: 4.w),
                               customText(
                                   'Order Summary',
-                                  fontSize: 18.sp,
-                                  fontWeight: FontWeight.w100,
-                                  color: AppColors.titleColor
+                                  fontSize: 17.5.sp,
                               ),
                             ],
                           ),
@@ -75,8 +72,8 @@ class _OrderSummaryState extends State<OrderSummary> {
                           SizedBox(height: 2.h),
                           Container(
                             padding: EdgeInsets.symmetric(
-                              horizontal: 4.w,
-                              vertical: 2.6.h,
+                              horizontal: 5.w,
+                              vertical: 2.h,
                             ),
                             decoration: BoxDecoration(
                               border: Border.all(color: Colors.grey.shade300,
@@ -87,11 +84,11 @@ class _OrderSummaryState extends State<OrderSummary> {
                             child: Row(
                               children: [
                                 ClipRRect(
-                                  borderRadius: BorderRadius.circular(16),
+                                  borderRadius: BorderRadius.circular(15),
                                   child: Image.asset(
                                     widget.image,
-                                    height: 11.h,
-                                    width: 11.h,
+                                    height: 8.h,
+                                    width: 8.h,
                                     fit: BoxFit.cover,
                                   ),
                                 ),
@@ -103,22 +100,20 @@ class _OrderSummaryState extends State<OrderSummary> {
                                       widget.title,
                                       fontSize: 17.sp,
                                       fontWeight: FontWeight.w700,
-                                      color: AppColors.titleColor
                                     ),
                                     SizedBox(height: 0.2.h),
 
                                     customText(
                                       'Sold by John',
-                                      fontSize: 16.5.sp,
+                                      fontSize: 16.2.sp,
                                       color: AppColors.lightText,
                                     ),
-                                    SizedBox(height: 0.7.h),
+                                    SizedBox(height: 0.9.h),
 
                                     customText(
                                       widget.price,
-                                      fontSize: 18.sp,
+                                      fontSize: 17.sp,
                                       fontWeight: FontWeight.w700,
-                                      color: AppColors.titleColor
                                     ),
                                   ],
                                 ),
@@ -133,21 +128,19 @@ class _OrderSummaryState extends State<OrderSummary> {
                               Icon(
                                 Icons.shield_outlined,
                                 color: AppColors.green,
-                                size: 2.7.h,
+                                size: 2.6.h,
                               ),
                               SizedBox(width: 2.w),
                               customText(
                                 'Purchase Protection',
-                                fontSize: 17.6.sp,
-                                fontWeight: FontWeight.w200,
-                                color: AppColors.titleColor,
+                                fontSize: 16.9.sp,
                               ),
                             ],
                           ),
-                          SizedBox(height: 2.h),
+                          SizedBox(height: 1.6.h),
                           customText(
                             "Your purchase is protected. If the item isn't as described, you'll get a full refund.",
-                            fontSize: 16.7.sp,
+                            fontSize: 16.4.sp,
                             color: AppColors.lightText,
                           ),
                           SizedBox(height: 3.h),
@@ -193,7 +186,8 @@ class _OrderSummaryState extends State<OrderSummary> {
                       child: Column(
                         children: [
                           SizedBox(height: 1.h),
-                          _row('Total', '\$102.50', bold: true),
+                          _row('Total', '\$102.50', bold: true,
+                          ),
                           SizedBox(height: 2.h),
                         ],
                       ),
@@ -223,13 +217,13 @@ class _OrderSummaryState extends State<OrderSummary> {
       children: [
         customText(
           label,
-          fontSize: 17.3.sp,
-          fontWeight: bold ? FontWeight.w700 : FontWeight.w100,
-          color: bold ? AppColors.titleColor : AppColors.titleColor,
+          fontSize: 16.8.sp,
+          fontWeight: bold ? FontWeight.w500 : FontWeight.w100,
+          color: bold ? AppColors.titleColor : AppColors.lightText,
         ),
         customText(
           value,
-          fontSize: 17.3.sp,
+          fontSize: 16.8.sp,
           fontWeight: bold ? FontWeight.w700 : FontWeight.w400,
         ),
       ],

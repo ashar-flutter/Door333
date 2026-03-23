@@ -1,5 +1,4 @@
-import 'dart:io';
-import '../config/barrel.dart';
+import 'barrel.dart';
 
 class ImagePickerWidget extends StatefulWidget {
   final Function(File?) onImagePicked;

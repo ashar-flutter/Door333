@@ -1,0 +1,47 @@
+import '../../../config/barrel.dart';
+
+Widget searchField({
+  Color? fillColor,
+}) {
+  return Container(
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(12),
+    ),
+    height: 5.9.h,
+    width: double.infinity,
+    child: TextField(
+      decoration: InputDecoration(
+        fillColor: fillColor ?? const Color(0xFFE2E8F0),
+        prefixIcon: Padding(
+          padding: const EdgeInsets.only(left: 20),
+          child: Icon(
+            Icons.search_outlined,
+            color: AppColors.lightText,
+            size: 2.6.h,
+          ),
+        ),
+        contentPadding: const EdgeInsets.only(bottom: 2),
+        hintText: "Search person by name...",
+        hintStyle: TextStyle(
+          fontSize: 15.sp,
+          color: AppColors.lightText,
+          fontFamily: "Hellix",
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(17),
+          borderSide: BorderSide(
+            color: Colors.grey.shade200,
+            width: 1.8,
+          ),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(17),
+          borderSide: BorderSide(
+            color: Colors.grey.shade300,
+            width: 1.5,
+          ),
+        ),
+      ),
+    ),
+  );
+}

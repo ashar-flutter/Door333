@@ -73,70 +73,73 @@ class _BoardingState extends State<Boarding> {
                   fit: BoxFit.contain,
                 ),
               ),
-              Column(
-                children: [
-                  SizedBox(height: 20.h),
-                  AnimatedSwitcher(
-                    duration: const Duration(milliseconds: 300),
-                    child: Image.asset(
-                      onboardingData[currentIndex]['image']!,
-                      key: ValueKey(currentIndex),
-                      height: 30.h,
-                      width: 60.w,
-                      fit: BoxFit.contain,
+              SingleChildScrollView(
+                physics: BouncingScrollPhysics(),
+                child: Column(
+                  children: [
+                    SizedBox(height: 20.h),
+                    AnimatedSwitcher(
+                      duration: const Duration(milliseconds: 300),
+                      child: Image.asset(
+                        onboardingData[currentIndex]['image']!,
+                        key: ValueKey(currentIndex),
+                        height: 30.h,
+                        width: 60.w,
+                        fit: BoxFit.contain,
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 4.9.h),
-                  AnimatedSwitcher(
-                    duration: const Duration(milliseconds: 300),
-                    child: Column(
-                      key: ValueKey(currentIndex),
-                      children: [
-                        customText(
-                          onboardingData[currentIndex]['title']!,
-                          fontSize: 18.2.sp,
-                          fontWeight: FontWeight.w900,
-                          textAlign: TextAlign.center,
-                        ),
-                        SizedBox(height: 1.8.h),
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 10.w),
-                          child: customText(
-                            onboardingData[currentIndex]['subtitle']!,
-                            fontSize: 16.8.sp,
-                            color: AppColors.lightText,
+                    SizedBox(height: 4.9.h),
+                    AnimatedSwitcher(
+                      duration: const Duration(milliseconds: 300),
+                      child: Column(
+                        key: ValueKey(currentIndex),
+                        children: [
+                          customText(
+                            onboardingData[currentIndex]['title']!,
+                            fontSize: 17.5.sp,
+                            fontWeight: FontWeight.w900,
                             textAlign: TextAlign.center,
                           ),
-                        ),
-                      ],
+                          SizedBox(height: 1.8.h),
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 10.w),
+                            child: customText(
+                              onboardingData[currentIndex]['subtitle']!,
+                              fontSize: 16.3.sp,
+                              color: AppColors.titleColor,
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 11.h),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 25),
-                    child: customButton(
-                      currentIndex == onboardingData.length - 1
-                          ? 'Welcome to Door333'
-                          : 'Next',
-                      nextPage,
-                      backgroundColor: Colors.white,
-                      textColor: AppColors.primary,
-                      borderColor: AppColors.primary,
-                      icon: Icons.arrow_forward,
-                      iconPosition: IconPosition.end,
+                    SizedBox(height: 10.h),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 25),
+                      child: customButton(
+                        height: 6.4,
+                        currentIndex == onboardingData.length - 1
+                            ? 'Welcome to Door333'
+                            : 'Next',
+                        nextPage,
+                        backgroundColor: Colors.white,
+                        textColor: AppColors.primary,
+                        borderColor: AppColors.primary,
+                        icon: Icons.arrow_forward,
+                        iconPosition: IconPosition.end,
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 2.h),
-                  onPress(
-                    onTap: skipToAuth,
-                    child: customText(
-                      "Skip",
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.primary,
+                    SizedBox(height: 2.h),
+                    onPress(
+                      onTap: skipToAuth,
+                      child: customText(
+                        "Skip",
+                        color: AppColors.primary,
+                      ),
                     ),
-                  ),
-                  Container(height: 1.3, width: 10.w, color: AppColors.primary),
-                ],
+                    Container(height: 1.3, width: 10.w, color: AppColors.primary),
+                  ],
+                ),
               ),
             ],
           ),
