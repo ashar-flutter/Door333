@@ -67,32 +67,32 @@ class _MarketPlaceState extends State<MarketPlace> {
               children: [
                 SizedBox(height: 5.h),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
+                  padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Row(
                         children: [
                           Image.asset(
-                            AppImage.market,
+                            AppImage.marketBold,
                             height: 3.h,
                             color: AppColors.primary,
                           ),
-                          SizedBox(width: 2.w),
+                          SizedBox(width: 3.2.w),
                           customText(
                             'Marketplace',
                             fontSize: 19.sp,
                             color: AppColors.primary,
-                            fontWeight: FontWeight.w900,
+                            fontWeight: FontWeight.w800,
                           ),
                         ],
                       ),
                       customButton(
-                        '+ Sell',
+                        '+  Sell',
                             () => showListingFeePopup(context),
-                        width: 22,
+                        width: 26,
                         height: 4.5,
-                        borderRadius: 10,
+                        borderRadius: 14,
                         textColor: Colors.white,
                       ),
                     ],
@@ -100,15 +100,13 @@ class _MarketPlaceState extends State<MarketPlace> {
                 ),
                 SizedBox(height: 1.5.h),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 5.w),
-                  child: textField(
-                    'Search items...',
-                    prefixIcon: Icons.search,
-                    focusBorderColor: Colors.grey.shade400,
-                    fillColor: Colors.grey.shade50,
+                  padding: EdgeInsets.symmetric(horizontal: 6.w),
+                  child: searchField(
+                    fillColor:Color(0xFFF8FAFC),
+                    hintText: 'Search items...',
                   ),
                 ),
-                SizedBox(height: 2.h),
+                SizedBox(height: 4.h),
                 Expanded(
                   child: SingleChildScrollView(
                     padding: EdgeInsets.symmetric(horizontal: 4.w),
@@ -132,10 +130,10 @@ class _MarketPlaceState extends State<MarketPlace> {
                                   ),
                                 ),
                                 child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(12),
+                                  borderRadius: BorderRadius.circular(18),
                                   child: Image.asset(
                                     item['image'],
-                                    height: 22.h,
+                                    height: 20.h,
                                     width: double.infinity,
                                     fit: BoxFit.cover,
                                   ),
@@ -145,22 +143,19 @@ class _MarketPlaceState extends State<MarketPlace> {
                               customText(
                                 item['price'],
                                 fontSize: 17.sp,
-                                fontWeight: FontWeight.w700,
-                                color: AppColors.titleColor,
+                                fontWeight: FontWeight.w800
                               ),
                               SizedBox(height: 0.3.h),
                               customText(
                                 item['title'],
-                                fontSize: 16.8.sp,
-                                fontWeight: FontWeight.w500,
-                                color: AppColors.lightText,
-                                maxLines: 1,
+                                fontSize: 16.5.sp,
+                                fontWeight: FontWeight.w200
                               ),
-                              SizedBox(height: 0.3.h),
+                              SizedBox(height: 0.4.h),
                               customText(
                                 item['condition'],
-                                fontSize: 16.sp,
-                                color: Colors.grey,
+                                fontSize: 15.5.sp,
+                                color: AppColors.lightText,
                                 maxLines: 1,
                               ),
                               SizedBox(height: 3.h),
@@ -183,17 +178,13 @@ class _MarketPlaceState extends State<MarketPlace> {
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      Icon(
-                                        Icons.chat_bubble_outline,
-                                        color: AppColors.lightText,
-                                        size: 2.5.h,
+                                      Image.asset(AppImage.chatBubble,
+                                      height: 1.8.h,
                                       ),
-                                      SizedBox(width: 2.w),
+                                      SizedBox(width: 3.w),
                                       customText(
                                         'Message Seller',
-                                        fontSize: 16.6.sp,
-                                        fontWeight: FontWeight.w500,
-                                        color: AppColors.lightText,
+                                        fontSize: 16.sp,
                                       ),
                                     ],
                                   ),

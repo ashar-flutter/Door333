@@ -44,7 +44,17 @@ class AppImage{
   static const String logout= "assets/icons/logout.png";
   static const String name= "assets/icons/name.png";
   static const String password= "assets/icons/password.png";
+  static const String chatBubble= "assets/icons/chat_bubble.png";
 
+
+//   bold..
+  static const String msgBold= "assets/icons/messages.png";
+
+
+  static const String chatBold= "assets/icons/chat_bold.png";
+  static const String homeBold= "assets/icons/home_bold.png";
+  static const String marketBold= "assets/icons/market_bold.png";
+  static const String settingsBold= "assets/icons/settings_bold.png";
 
 
 

@@ -1,6 +1,7 @@
 import '../../../config/barrel.dart';
 
 Widget searchField({
+  required String hintText,
   Color? fillColor,
 }) {
   return Container(
@@ -11,6 +12,7 @@ Widget searchField({
     width: double.infinity,
     child: TextField(
       decoration: InputDecoration(
+        filled: true,
         fillColor: fillColor ?? const Color(0xFFE2E8F0),
         prefixIcon: Padding(
           padding: const EdgeInsets.only(left: 20),
@@ -21,7 +23,7 @@ Widget searchField({
           ),
         ),
         contentPadding: const EdgeInsets.only(bottom: 2),
-        hintText: "Search person by name...",
+        hintText: hintText,
         hintStyle: TextStyle(
           fontSize: 15.sp,
           color: AppColors.lightText,

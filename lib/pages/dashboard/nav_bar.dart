@@ -11,10 +11,18 @@ class _NavBarState extends State<NavBar> {
   int currentIndex = 0;
 
   final List<Map<String, dynamic>> items = [
-    {"icon": AppImage.home, "label": "Home"},
-    {"icon": AppImage.market, "label": "Market"},
-    {"icon": AppImage.chat, "label": "Chat"},
-    {"icon": AppImage.settings, "label": "Settings"},
+    {"icon": AppImage.home, "boldIcon": AppImage.homeBold, "label": "Home"},
+    {
+      "icon": AppImage.market,
+      "boldIcon": AppImage.marketBold,
+      "label": "Market",
+    },
+    {"icon": AppImage.chat, "boldIcon": AppImage.chatBold, "label": "Chat"},
+    {
+      "icon": AppImage.settings,
+      "boldIcon": AppImage.settingsBold,
+      "label": "Settings",
+    },
   ];
 
   final List<Widget> screens = [
@@ -57,21 +65,21 @@ class _NavBarState extends State<NavBar> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Image.asset(
-                      items[index]["icon"],
-                      width: 24,
-                      height: 24,
-                      color: isActive
-                          ? AppColors.primary
-                          : Color(0xFF000000).withValues(alpha: 0.6),
+                      isActive
+                          ? items[index]["boldIcon"]
+                          : items[index]["icon"],
+                      width: 21,
+                      height: 21,
+                      color: isActive ? AppColors.primary : null,
                     ),
                     const SizedBox(height: 3),
                     customText(
                       items[index]["label"],
                       fontSize: 14,
-                      fontWeight: isActive ? FontWeight.w900 : FontWeight.w200,
+                      fontWeight: isActive ? FontWeight.w900 : FontWeight.w300,
                       color: isActive
                           ? AppColors.primary
-                          : Color(0xFF000000).withValues(alpha: 0.6),
+                          : Color(0xFF000000).withValues(alpha: 0.7),
                     ),
                   ],
                 ),

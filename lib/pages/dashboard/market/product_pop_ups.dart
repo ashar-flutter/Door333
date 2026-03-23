@@ -23,8 +23,8 @@ void showContactSellerPopup(
             child: Material(
               color: Colors.transparent,
               child: Container(
-                margin: EdgeInsets.symmetric(horizontal: 5.w),
-                padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 3.h),
+                margin: EdgeInsets.symmetric(horizontal: 9.w),
+                padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 3.h),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(20),
@@ -149,7 +149,7 @@ void showListingFeePopup(BuildContext context) {
               child: Material(
                 color: Colors.transparent,
                 child: Container(
-                  margin: EdgeInsets.symmetric(horizontal: 5.w),
+                  margin: EdgeInsets.symmetric(horizontal: 6.w),
                   padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 3.h),
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -309,9 +309,9 @@ void showListingFeePopup(BuildContext context) {
                                 visualDensity: VisualDensity.compact,
                               ),
                             ),
-                            SizedBox(width: 3.w),
+                            SizedBox(width: 2.5.w),
                             customText(
-                              'I agree to the Terms & Conditions and Privacy Policy.',
+                              'I agree to the Terms & Policy.',
                               fontSize: 14.8.sp,
                             ),
                           ],
@@ -355,7 +355,7 @@ void showNewListingPopup(BuildContext context) {
           child: Material(
             color: Colors.transparent,
             child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 5.w),
+              margin: EdgeInsets.symmetric(horizontal: 8.w),
               padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 3.h),
               decoration: BoxDecoration(
                 color: Colors.white,

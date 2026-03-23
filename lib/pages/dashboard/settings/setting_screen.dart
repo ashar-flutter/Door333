@@ -40,7 +40,7 @@ class _SettingScreenState extends State<SettingScreen> {
                         Row(
                           children: [
                             Image.asset(
-                              AppImage.settings,
+                              AppImage.settingsBold,
                               height: 3.h,
                               color: AppColors.primary,
                             ),

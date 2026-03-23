@@ -67,7 +67,7 @@ class _MainChatPageState extends State<MainChatPage> {
                   child: Row(
                     children: [
                       Image.asset(
-                        AppImage.chat,
+                        AppImage.msgBold,
                         height: 3.h,
                         color: AppColors.primary,
                       ),
@@ -84,7 +84,10 @@ class _MainChatPageState extends State<MainChatPage> {
                 SizedBox(height: 1.1.h),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 6.w),
-                  child: searchField(),
+                  child: searchField(
+                    hintText: "Search person by name...",
+                    fillColor: const Color(0xFFFCFDFE)
+                  ),
                 ),
                 SizedBox(height: 4.h),
 

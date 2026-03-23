@@ -20,146 +20,144 @@ Future<void> showCustomPopup(
     context: context,
     barrierDismissible: true,
     barrierLabel: '',
-    barrierColor: const Color(0xB3000000),
-    transitionDuration: const Duration(milliseconds: 280),
+    barrierColor: Colors.black54,
+    transitionDuration: const Duration(milliseconds: 180),
     pageBuilder: (_, _, _) => const SizedBox.shrink(),
     transitionBuilder: (ctx, anim, _, _) {
-      final curved = CurvedAnimation(parent: anim, curve: Curves.easeOutBack);
-      final slide = Tween<Offset>(
-        begin: const Offset(1, 0),
-        end: Offset.zero,
-      ).animate(CurvedAnimation(parent: anim, curve: Curves.easeOutCubic));
+      final curved = Curves.easeOutCubic.transform(anim.value);
+
+      final scale = 0.94 + (0.06 * curved);
+      final opacity = anim.value;
 
       Widget child = Center(
         child: Material(
           color: Colors.transparent,
-          child: Container(
-            margin: EdgeInsets.symmetric(horizontal: 8.w),
-            padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 3.h),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(24),
-            ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          child: Transform.scale(
+            scale: scale,
+            child: Opacity(
+              opacity: opacity,
+              child: Container(
+                margin: EdgeInsets.symmetric(horizontal: 8.w),
+                padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 3.h),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(24),
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    if (backLabel != null)
-                      onPress(
-                        onTap: onBack ?? () => Navigator.pop(ctx),
-                        child: Row(
-                          children: [
-                            Icon(
-                              Icons.arrow_back,
-                              size: 2.3.h,
-                              color: AppColors.titleColor,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        if (backLabel != null)
+                          onPress(
+                            onTap: onBack ?? () => Navigator.pop(ctx),
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.arrow_back,
+                                  size: 2.3.h,
+                                  color: AppColors.titleColor,
+                                ),
+                                SizedBox(width: 2.w),
+                                customText(
+                                  backLabel,
+                                  fontSize: 16.5.sp,
+                                  color: AppColors.lightText,
+                                ),
+                              ],
                             ),
-                            SizedBox(width: 2.w),
-                            customText(
-                              backLabel,
-                              fontSize: 16.5.sp,
-                              color: AppColors.lightText,
-                            ),
-                          ],
+                          )
+                        else
+                          const SizedBox.shrink(),
+                        onPress(
+                          onTap: () => Navigator.pop(ctx),
+                          child: Icon(
+                            Icons.close,
+                            size: 2.3.h,
+                            color: AppColors.titleColor,
+                          ),
                         ),
-                      )
-                    else
-                      const SizedBox.shrink(),
-                    onPress(
-                      onTap: () => Navigator.pop(ctx),
-                      child: Icon(
-                        Icons.close,
-                        size: 2.3.h,
-                        color: AppColors.titleColor,
+                      ],
+                    ),
+                    SizedBox(height: 2.2.h),
+
+                    Center(
+                      child: customText(
+                        title,
+                        fontSize: 17.sp,
+                        fontWeight: FontWeight.w800,
+                        textAlign: TextAlign.center,
                       ),
                     ),
+                    SizedBox(height: 2.2.h),
+
+                    if (showIcon && customContent == null) ...[
+                      Center(
+                        child: Container(
+                          height: 10.h,
+                          width: 10.h,
+                          decoration: BoxDecoration(
+                            color: AppColors.lightGreen,
+                            shape: BoxShape.circle,
+                          ),
+                          child: Center(
+                            child: Image.asset(
+                              AppImage.check,
+                              height: 5.1.h,
+                              width: 5.1.h,
+                              color: AppColors.green,
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 2.2.h),
+                    ],
+
+                    Center(
+                      child: customText(
+                        message,
+                        fontSize: 16.5.sp,
+                        color: AppColors.titleColor,
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    SizedBox(height: 4.7.h),
+
+                    if (customContent != null) ...[customContent],
+
+                    customButton(
+                      height: 6,
+                      buttonText,
+                      onButton,
+                      textColor: Colors.white,
+                      backgroundColor: buttonColor,
+                      borderColor: buttonColor,
+                    ),
+
+                    if (extraButton != null) ...[
+                      SizedBox(height: 1.5.h),
+                      customButton(
+                        height: 6,
+                        extraButton,
+                        onExtra ?? () => Navigator.pop(ctx),
+                        backgroundColor: Colors.white,
+                        textColor: AppColors.primary,
+                        borderColor: AppColors.primary,
+                      ),
+                    ],
                   ],
                 ),
-                SizedBox(height: 2.2.h),
-
-                // Title
-                Center(
-                  child: customText(
-                    title,
-                    fontSize: 17.sp,
-                    fontWeight: FontWeight.w800,
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-                SizedBox(height: 2.2.h),
-
-                // Icon circle — only when showIcon is true
-                if (showIcon && customContent == null) ...[
-                  Center(
-                    child: Container(
-                      height: 10.h,
-                      width: 10.h,
-                      decoration: BoxDecoration(
-                        color: AppColors.lightGreen,
-                        shape: BoxShape.circle,
-                      ),
-                      child: Center(
-                        child: Image.asset(
-                          AppImage.check,
-                          height: 5.1.h,
-                          width: 5.1.h,
-                          color: AppColors.green,
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 2.2.h),
-                ],
-
-                // Message
-                Center(
-                  child: customText(
-                    message,
-                    fontSize: 16.5.sp,
-                    color: AppColors.titleColor,
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-                SizedBox(height: 4.7.h),
-
-                if (customContent != null) ...[customContent],
-
-                // Primary button
-                customButton(
-                  height: 6,
-                  buttonText,
-                  onButton,
-                  textColor: Colors.white,
-                  backgroundColor: buttonColor,
-                  borderColor: buttonColor,
-                ),
-
-                // Extra button
-                if (extraButton != null) ...[
-                  SizedBox(height: 1.5.h),
-                  customButton(
-                    height: 6,
-                    extraButton,
-                    onExtra ?? () => Navigator.pop(ctx),
-                    backgroundColor: Colors.white,
-                    textColor: AppColors.primary,
-                    borderColor: AppColors.primary,
-                  ),
-                ],
-              ],
+              ),
             ),
           ),
         ),
       );
 
-      return slideFromRight
-          ? SlideTransition(position: slide, child: child)
-          : ScaleTransition(
-        scale: curved,
-        child: FadeTransition(opacity: anim, child: child),
+      return AnimatedBuilder(
+        animation: anim,
+        builder: (_, _) => child,
       );
     },
   );
