@@ -39,7 +39,7 @@ class _NavBarState extends State<NavBar> {
         backgroundColor: Colors.white,
         body: screens[currentIndex],
         bottomNavigationBar: Container(
-          padding: const EdgeInsets.symmetric(vertical: 8),
+          padding: EdgeInsets.symmetric(vertical: 1.2.h),
           decoration: BoxDecoration(
             color: Colors.white,
             boxShadow: [
@@ -68,14 +68,14 @@ class _NavBarState extends State<NavBar> {
                       isActive
                           ? items[index]["boldIcon"]
                           : items[index]["icon"],
-                      width: 21,
-                      height: 21,
+                      width: 3.h,
+                      height: 3.h,
                       color: isActive ? AppColors.primary : null,
                     ),
-                    const SizedBox(height: 3),
+                    SizedBox(height: 0.5.h),
                     customText(
                       items[index]["label"],
-                      fontSize: 14,
+                      fontSize: 16.4.sp,
                       fontWeight: isActive ? FontWeight.w900 : FontWeight.w300,
                       color: isActive
                           ? AppColors.primary

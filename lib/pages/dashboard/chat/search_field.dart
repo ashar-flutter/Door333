@@ -15,11 +15,14 @@ Widget searchField({
         filled: true,
         fillColor: fillColor ?? const Color(0xFFE2E8F0),
         prefixIcon: Padding(
-          padding: const EdgeInsets.only(left: 20),
-          child: Icon(
-            Icons.search_outlined,
-            color: AppColors.lightText,
-            size: 2.6.h,
+          padding: const EdgeInsets.only(left: 22, right: 8),
+          child: SizedBox(
+            height: 1.2.h,
+            width: 1.2.h,
+            child: Image.asset(
+              AppImage.search,
+              fit: BoxFit.contain,
+            ),
           ),
         ),
         contentPadding: const EdgeInsets.only(bottom: 2),

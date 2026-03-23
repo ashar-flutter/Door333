@@ -59,6 +59,7 @@ class _LoginState extends State<Login> {
                       height: 12.h,
                       width: 12.h,
                       fit: BoxFit.contain,
+                      filterQuality: FilterQuality.high,
                     ),
                   ),
                   SizedBox(height: 3.h),
@@ -76,10 +77,7 @@ class _LoginState extends State<Login> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        customText(
-                          'Email',
-                          fontSize: 16.5.sp,
-                        ),
+                        customText('Email', fontSize: 16.5.sp),
                         SizedBox(height: 1.6.h),
                         textField(
                           'Ex.abc@example.com',
@@ -87,10 +85,7 @@ class _LoginState extends State<Login> {
                           prefixIcon: Icons.alternate_email,
                         ),
                         SizedBox(height: 3.h),
-                        customText(
-                          'Your Password',
-                          fontSize: 16.5.sp,
-                        ),
+                        customText('Your Password', fontSize: 16.5.sp),
                         SizedBox(height: 1.6.h),
                         textField(
                           '••••••••',
@@ -135,7 +130,7 @@ class _LoginState extends State<Login> {
                             ),
                           ],
                         ),
-                        SizedBox(height: 6.3.h),
+                        SizedBox(height: 9.h),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [

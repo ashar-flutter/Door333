@@ -1,4 +1,5 @@
 import '../../../config/barrel.dart';
+
 class MarketPlace extends StatefulWidget {
   const MarketPlace({super.key});
 
@@ -53,6 +54,7 @@ class _MarketPlaceState extends State<MarketPlace> {
         backgroundColor: Colors.white,
         body: Stack(
           children: [
+            // Background images
             Positioned(
               top: -20,
               left: -40,
@@ -63,11 +65,13 @@ class _MarketPlaceState extends State<MarketPlace> {
               right: -20,
               child: Image.asset(AppImage.back2, height: 250, width: 250),
             ),
+
+            // Main content
             Column(
               children: [
                 SizedBox(height: 5.h),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
+                  padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 2.h),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -87,12 +91,28 @@ class _MarketPlaceState extends State<MarketPlace> {
                           ),
                         ],
                       ),
+                      SizedBox(width: 7.w),
+                      onPress(
+                        onTap: () => showNewListingPopup(context),
+                        child: Container(
+                          padding: EdgeInsets.all(0.5.h),
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: AppColors.primary,
+                          ),
+                          child: Icon(
+                            Icons.add,
+                            size: 2.4.h,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
                       customButton(
-                        '+  Sell',
+                        'Sell',
                             () => showListingFeePopup(context),
-                        width: 26,
+                        width: 20,
                         height: 4.5,
-                        borderRadius: 14,
+                        borderRadius: 10,
                         textColor: Colors.white,
                       ),
                     ],
@@ -102,99 +122,104 @@ class _MarketPlaceState extends State<MarketPlace> {
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 6.w),
                   child: searchField(
-                    fillColor:Color(0xFFF8FAFC),
+                    fillColor: const Color(0xFFF8FAFC),
                     hintText: 'Search items...',
                   ),
                 ),
                 SizedBox(height: 4.h),
                 Expanded(
-                  child: SingleChildScrollView(
-                    padding: EdgeInsets.symmetric(horizontal: 4.w),
-                    child: Wrap(
-                      spacing: 3.w,
-                      runSpacing: 2.h,
-                      children: List.generate(items.length, (i) {
-                        final item = items[i];
-                        return SizedBox(
-                          width: (100.w - 4.w * 2 - 3.w) / 2,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              onPress(
-                                onTap: () => Get.to(
-                                  ProductDetail(
+                  child: Container(
+                    color: Colors.white,
+                    child: SingleChildScrollView(
+                      padding: EdgeInsets.symmetric(horizontal: 4.w),
+                      child: Wrap(
+                        spacing: 3.w,
+                        runSpacing: 2.h,
+                        children: List.generate(items.length, (i) {
+                          final item = items[i];
+                          return SizedBox(
+                            width: (100.w - 4.w * 2 - 3.w) / 2,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                onPress(
+                                  onTap: () => Get.to(
+                                    ProductDetail(
+                                      image: item['image'],
+                                      title: item['title'],
+                                      price: item['price'],
+                                      condition: item['condition'],
+                                    ),
+                                  ),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(17),
+                                    child: Image.asset(
+                                      item['image'],
+                                      height: 19.h,
+                                      width: double.infinity,
+                                      fit: BoxFit.cover,
+                                      filterQuality: FilterQuality.high,
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 3.h),
+                                customText(
+                                  item['price'],
+                                  fontSize: 17.sp,
+                                  fontWeight: FontWeight.w800,
+                                ),
+                                SizedBox(height: 0.3.h),
+                                customText(
+                                  item['title'],
+                                  fontSize: 16.5.sp,
+                                  fontWeight: FontWeight.w200,
+                                ),
+                                SizedBox(height: 0.4.h),
+                                customText(
+                                  item['condition'],
+                                  fontSize: 15.5.sp,
+                                  color: AppColors.lightText,
+                                  maxLines: 1,
+                                ),
+                                SizedBox(height: 3.h),
+                                onPress(
+                                  onTap: () => showContactSellerPopup(
+                                    context,
                                     image: item['image'],
                                     title: item['title'],
                                     price: item['price'],
-                                    condition: item['condition'],
                                   ),
-                                ),
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(18),
-                                  child: Image.asset(
-                                    item['image'],
-                                    height: 20.h,
+                                  child: Container(
                                     width: double.infinity,
-                                    fit: BoxFit.cover,
+                                    padding: EdgeInsets.symmetric(
+                                      vertical: 0.9.h,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(12),
+                                      color: Colors.grey.shade200,
+                                    ),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        Image.asset(
+                                          AppImage.chatBubble,
+                                          height: 1.8.h,
+                                        ),
+                                        SizedBox(width: 3.w),
+                                        customText(
+                                          'Message Seller',
+                                          fontSize: 16.sp,
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
-                              ),
-                              SizedBox(height: 3.h),
-                              customText(
-                                item['price'],
-                                fontSize: 17.sp,
-                                fontWeight: FontWeight.w800
-                              ),
-                              SizedBox(height: 0.3.h),
-                              customText(
-                                item['title'],
-                                fontSize: 16.5.sp,
-                                fontWeight: FontWeight.w200
-                              ),
-                              SizedBox(height: 0.4.h),
-                              customText(
-                                item['condition'],
-                                fontSize: 15.5.sp,
-                                color: AppColors.lightText,
-                                maxLines: 1,
-                              ),
-                              SizedBox(height: 3.h),
-                              onPress(
-                                onTap: () => showContactSellerPopup(
-                                  context,
-                                  image: item['image'],
-                                  title: item['title'],
-                                  price: item['price'],
-                                ),
-                                child: Container(
-                                  width: double.infinity,
-                                  padding: EdgeInsets.symmetric(
-                                    vertical: 0.9.h,
-                                  ),
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(12),
-                                    color: Colors.grey.shade200,
-                                  ),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Image.asset(AppImage.chatBubble,
-                                      height: 1.8.h,
-                                      ),
-                                      SizedBox(width: 3.w),
-                                      customText(
-                                        'Message Seller',
-                                        fontSize: 16.sp,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              SizedBox(height: 1.6.h),
-                            ],
-                          ),
-                        );
-                      }),
+                                SizedBox(height: 1.6.h),
+                              ],
+                            ),
+                          );
+                        }),
+                      ),
                     ),
                   ),
                 ),

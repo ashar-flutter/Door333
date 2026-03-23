@@ -1,4 +1,3 @@
-import 'dart:io';
 import '../../../config/barrel.dart';
 
 class CreatePost extends StatefulWidget {
@@ -65,9 +64,7 @@ class _CreatePostState extends State<CreatePost> {
                         SizedBox(width: 4.w),
                         customText(
                           'Create Post',
-                          fontSize: 17.3.sp,
-                          fontWeight: FontWeight.w700,
-                          color: AppColors.titleColor,
+                          fontSize: 17.sp,
                         ),
                       ],
                     ),
@@ -110,7 +107,7 @@ class _CreatePostState extends State<CreatePost> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      customText('Jane Doe', fontSize: 17.sp),
+                      customText('Jane Doe', fontSize: 16.8.sp),
                       SizedBox(height: 0.6),
                       Row(
                         children: [
@@ -152,7 +149,7 @@ class _CreatePostState extends State<CreatePost> {
                           hintStyle: TextStyle(
                             fontFamily: 'Hellix',
                             color: AppColors.lightText,
-                            fontSize: 15.7.sp,
+                            fontSize: 15.3.sp,
                           ),
                           border: InputBorder.none,
                           isDense: true,

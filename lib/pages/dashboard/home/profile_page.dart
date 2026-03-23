@@ -66,7 +66,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     SizedBox(height: 1.7.h),
                     customText(
                       'Jane Doe',
-                      fontSize: 18.sp,
+                      fontSize: 17.sp,
                       fontWeight: FontWeight.w900,
                     ),
                     SizedBox(height: 2.h),
@@ -84,13 +84,11 @@ class _ProfilePageState extends State<ProfilePage> {
                           Icon(
                             Icons.edit_outlined,
                             size: 2.4.h,
-                            color: AppColors.titleColor,
                           ),
                           SizedBox(width: 2.w),
                           customText(
                             'Edit Profile',
                             fontSize: 16.sp,
-                            fontWeight: FontWeight.w600,
                           ),
                         ],
                       ),
@@ -105,8 +103,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         alignment: Alignment.centerLeft,
                         child: customText(
                           'Posts',
-                          fontSize: 17.sp,
-                          fontWeight: FontWeight.w800,
+                          fontSize: 16.8.sp,
                         ),
                       ),
                     ),
@@ -139,7 +136,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                       children: [
                                         customText(
                                           'Jane Doe',
-                                          fontSize: 17.sp,
+                                          fontSize: 16.7.sp,
                                         ),
                                         SizedBox(height: 0.2.h,),
                                         Row(

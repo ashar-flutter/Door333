@@ -38,6 +38,8 @@ class _ProductDetailState extends State<ProductDetail> {
                           width: double.infinity,
                           height: 35.h,
                           fit: BoxFit.cover,
+                          filterQuality: FilterQuality.high,
+
                         ),
                         Positioned(
                           top: 4.h,

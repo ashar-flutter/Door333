@@ -45,6 +45,8 @@ class AppImage{
   static const String name= "assets/icons/name.png";
   static const String password= "assets/icons/password.png";
   static const String chatBubble= "assets/icons/chat_bubble.png";
+  static const String search= "assets/icons/search.png";
+  static const String shopping= "assets/icons/shopping.png";
 
 
 //   bold..

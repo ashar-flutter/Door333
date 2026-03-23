@@ -57,8 +57,7 @@ class _SignUpState extends State<SignUp> {
                         SizedBox(height: 0.8.h),
                         Wrap(
                           children: [
-                            customText('Create an ', fontSize: 16,
-                            ),
+                            customText('Create an ', fontSize: 16),
                             customText(
                               'account',
                               color: AppColors.primary,
@@ -96,7 +95,7 @@ class _SignUpState extends State<SignUp> {
                                         ),
                                       ),
                                       child: Center(
-                                        child:Image.asset(
+                                        child: Image.asset(
                                           AppImage.person,
                                           height: 4.h,
                                         ),
@@ -138,10 +137,7 @@ class _SignUpState extends State<SignUp> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  customText(
-                                    'First Name',
-                                    fontSize: 16.5.sp,
-                                  ),
+                                  customText('First Name', fontSize: 16.5.sp),
                                   SizedBox(height: 1.6.h),
                                   textField('Ex.John'),
                                 ],
@@ -152,10 +148,7 @@ class _SignUpState extends State<SignUp> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  customText(
-                                    'Last Name',
-                                    fontSize: 16.5.sp,
-                                  ),
+                                  customText('Last Name', fontSize: 16.5.sp),
                                   SizedBox(height: 1.6.h),
                                   textField('Ex.Doe'),
                                 ],
@@ -164,10 +157,7 @@ class _SignUpState extends State<SignUp> {
                           ],
                         ),
                         SizedBox(height: 2.5.h),
-                        customText(
-                          'Email',
-                          fontSize: 16.5.sp,
-                        ),
+                        customText('Email', fontSize: 16.5.sp),
                         SizedBox(height: 1.6.h),
                         textField(
                           'Ex.abc@example.com',
@@ -175,10 +165,7 @@ class _SignUpState extends State<SignUp> {
                           prefixIcon: Icons.alternate_email,
                         ),
                         SizedBox(height: 2.5.h),
-                        customText(
-                          'Your Password',
-                          fontSize: 16.5.sp,
-                        ),
+                        customText('Your Password', fontSize: 16.5.sp),
                         SizedBox(height: 1.h),
                         textField(
                           '••••••••',
@@ -189,27 +176,37 @@ class _SignUpState extends State<SignUp> {
                         SizedBox(height: 2.8.h),
                         Row(
                           children: [
-                            SizedBox(
-                              height: 1.h,
-                              width: 1.h,
-                              child: Checkbox(
-                                value: isChecked,
-                                onChanged: (val) =>
-                                    setState(() => isChecked = val ?? false),
-                                activeColor: AppColors.primary,
-                                side: BorderSide(
-                                  color: Colors.grey.shade400,
-                                  width: 1.2,
+                            onPress(
+                              onTap: () {
+                                setState(() {
+                                  isChecked = !isChecked;
+                                });
+                              },
+                              child: Container(
+                                height: 1.8.h,
+                                width: 1.8.h,
+                                decoration: BoxDecoration(
+                                  color: isChecked
+                                      ? AppColors.primary
+                                      : Colors.transparent,
+                                  border: Border.all(
+                                    color: isChecked
+                                        ? AppColors.primary
+                                        : Colors.grey.shade600,
+                                    width: 1.5,
+                                  ),
+                                  borderRadius: BorderRadius.circular(4),
                                 ),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(5),
-                                ),
-                                materialTapTargetSize:
-                                    MaterialTapTargetSize.shrinkWrap,
-                                visualDensity: VisualDensity.compact,
+                                child: isChecked
+                                    ? Icon(
+                                        Icons.check,
+                                        size: 1.5.h,
+                                        color: Colors.white,
+                                      )
+                                    : null,
                               ),
                             ),
-                            SizedBox(width: 3.w),
+                            SizedBox(width: 2.w),
                             customText(
                               'I agree to the Terms & Conditions and Privacy Policy. ',
                               fontSize: 15.2.sp,

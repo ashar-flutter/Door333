@@ -14,7 +14,7 @@ class _SplashState extends State<Splash> {
   }
 
   Future<void> _navigateToBoarding() async {
-    await Future.delayed(const Duration(seconds: 3));
+    await Future.delayed(const Duration(seconds: 5));
     if (mounted) {
       Navigator.pushReplacement(
         context,
@@ -46,6 +46,7 @@ class _SplashState extends State<Splash> {
                 width: 27.w,
                 height: 27.h,
                 fit: BoxFit.contain,
+                filterQuality: FilterQuality.high,
               ),
             ),
             Positioned(

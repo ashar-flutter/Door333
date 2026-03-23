@@ -1,11 +1,11 @@
 import '../../../config/barrel.dart';
 
 void showContactSellerPopup(
-    BuildContext context, {
-      required String image,
-      required String title,
-      required String price,
-    }) {
+  BuildContext context, {
+  required String image,
+  required String title,
+  required String price,
+}) {
   showGeneralDialog(
     context: context,
     barrierDismissible: true,
@@ -80,10 +80,7 @@ void showContactSellerPopup(
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              customText(
-                                title,
-                                fontSize: 16.3.sp,
-                              ),
+                              customText(title, fontSize: 16.3.sp),
                               customText(
                                 price,
                                 fontSize: 16.sp,
@@ -97,22 +94,13 @@ void showContactSellerPopup(
                     SizedBox(height: 2.h),
                     Align(
                       alignment: Alignment.centerLeft,
-                      child: customText(
-                        'Message',
-                        fontSize: 16.sp,
-                      ),
+                      child: customText('Message', fontSize: 16.sp),
                     ),
                     SizedBox(height: 1.h),
-                    popUpField(
-                      'Hi Alex, is this available?',
-                      maxLines: 6,
-                    ),
+                    popUpField('Hi Alex, is this available?', maxLines: 6),
                     SizedBox(height: 4.h),
-                    customButton(
-                        height: 5.8,
-                        'Send Message', () {
+                    customButton(height: 5.8, 'Send Message', () {
                       Navigator.pop(ctx);
-                      showListingFeePopup(context);
                     }, textColor: Colors.white),
                     SizedBox(height: 0.2.h),
                   ],
@@ -149,7 +137,7 @@ void showListingFeePopup(BuildContext context) {
               child: Material(
                 color: Colors.transparent,
                 child: Container(
-                  margin: EdgeInsets.symmetric(horizontal: 6.w),
+                  margin: EdgeInsets.symmetric(horizontal: 7.w),
                   padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 3.h),
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -185,14 +173,13 @@ void showListingFeePopup(BuildContext context) {
                         Container(
                           padding: EdgeInsets.all(1.5.h),
                           decoration: BoxDecoration(
-                            color: const Color(0xFFEDE9FE),
+                            color:  const Color(0xFFDBEAFE),
                             shape: BoxShape.circle,
                           ),
-                          child: Icon(
-                            Icons.storefront_outlined,
-                            color: AppColors.primary,
-                            size: 3.h,
-                          ),
+                          child: Image.asset(AppImage.shopping,
+                          height: 2.2.h,
+                            width: 2.2.h,
+                          )
                         ),
                         SizedBox(height: 3.h),
                         customText(
@@ -207,28 +194,25 @@ void showListingFeePopup(BuildContext context) {
                           fontSize: 16.sp,
                           textAlign: TextAlign.center,
                         ),
-                        SizedBox(height: 2.5.h),
+                        SizedBox(height: 2.9.h),
                         customText(
                           '\$0.99',
-                          fontSize: 17.5.sp,
+                          fontSize: 18.sp,
                           fontWeight: FontWeight.w900,
                         ),
-                        customText(
-                          '/listing',
-                          fontSize: 15.6.sp,
-                        ),
-                        SizedBox(height: 3.2.h),
+                        customText('/listing', fontSize: 15.6.sp),
+                        SizedBox(height: 3.4.h),
                         Align(
-                            alignment: Alignment.topLeft,
-                            child: customText('Cardholder Name', fontSize: 16.sp)),
-                        SizedBox(height: 0.8.h),
-                        popUpField(
-                          'John Doe',
+                          alignment: Alignment.topLeft,
+                          child: customText('Cardholder Name', fontSize: 16.sp),
                         ),
+                        SizedBox(height: 0.8.h),
+                        popUpField('John Doe'),
                         SizedBox(height: 1.h),
                         Align(
-                            alignment: Alignment.topLeft,
-                            child: customText('Card Number', fontSize: 16.sp)),
+                          alignment: Alignment.topLeft,
+                          child: customText('Card Number', fontSize: 16.sp),
+                        ),
                         SizedBox(height: 0.8.h),
                         popUpField(
                           '0000 0000 0000 0000',
@@ -273,13 +257,13 @@ void showListingFeePopup(BuildContext context) {
                           children: [
                             Icon(
                               Icons.lock_outline,
-                              size: 1.5.h,
-                              color: AppColors.primary,
+                              size: 2.h,
+                              color: AppColors.titleColor,
                             ),
                             SizedBox(width: 2.w),
                             customText(
                               'Payments are secure and encrypted',
-                              fontSize: 15.6.sp,
+                              fontSize: 15.8.sp,
                             ),
                           ],
                         ),
@@ -287,42 +271,53 @@ void showListingFeePopup(BuildContext context) {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            SizedBox(
-                              height: 2.h,
-                              width: 2.h,
-                              child: Checkbox(
-                                value: isChecked,
-                                onChanged: (val) {
-                                  setState(() {
-                                    isChecked = val ?? false;
-                                  });
-                                },
-                                activeColor: AppColors.primary,
-                                side: BorderSide(
-                                  color: Colors.grey.shade400,
-                                  width: 1.2,
+                            onPress(
+                              onTap: () {
+                                setState(() {
+                                  isChecked = !isChecked;
+                                });
+                              },
+                              child: Container(
+                                height: 1.8.h,
+                                width: 1.8.h,
+                                decoration: BoxDecoration(
+                                  color: isChecked
+                                      ? AppColors.primary
+                                      : Colors.transparent,
+                                  border: Border.all(
+                                    color: isChecked
+                                        ? AppColors.primary
+                                        : Colors.grey.shade500,
+                                    width: 1.5,
+                                  ),
+                                  borderRadius: BorderRadius.circular(4),
                                 ),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(5),
-                                ),
-                                materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                                visualDensity: VisualDensity.compact,
+                                child: isChecked
+                                    ? Icon(
+                                        Icons.check,
+                                        size: 1.5.h,
+                                        color: Colors.white,
+                                      )
+                                    : null,
                               ),
                             ),
                             SizedBox(width: 2.5.w),
                             customText(
                               'I agree to the Terms & Policy.',
-                              fontSize: 14.8.sp,
+                              fontSize: 15.8.sp,
                             ),
                           ],
                         ),
                         SizedBox(height: 3.h),
                         customButton(
-                            height: 5.7,
-                            'Pay \$0.99 & continue', () {
-                          Navigator.pop(ctx);
-                          showNewListingPopup(context);
-                        }, textColor: Colors.white),
+                          height: 5.7,
+                          'Pay \$0.99 & continue',
+                          () {
+                            Navigator.pop(ctx);
+                            paidPop(context);
+                          },
+                          textColor: Colors.white,
+                        ),
                         SizedBox(height: 0.2.h),
                       ],
                     ),
@@ -336,6 +331,7 @@ void showListingFeePopup(BuildContext context) {
     },
   );
 }
+
 void showNewListingPopup(BuildContext context) {
   showGeneralDialog(
     context: context,
@@ -355,7 +351,7 @@ void showNewListingPopup(BuildContext context) {
           child: Material(
             color: Colors.transparent,
             child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 8.w),
+              margin: EdgeInsets.symmetric(horizontal: 9.w),
               padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 3.h),
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -382,10 +378,7 @@ void showNewListingPopup(BuildContext context) {
                     fontWeight: FontWeight.w900,
                   ),
                   SizedBox(height: 0.5.h),
-                  customText(
-                    'Enter product details',
-                    fontSize: 16.sp,
-                  ),
+                  customText('Enter product details', fontSize: 16.sp),
                   SizedBox(height: 4.h),
                   Container(
                     width: double.infinity,
@@ -400,8 +393,8 @@ void showNewListingPopup(BuildContext context) {
                           height: 5.h,
                           width: 5.h,
                           decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.grey.shade100
+                            shape: BoxShape.circle,
+                            color: Colors.grey.shade100,
                           ),
                           child: Center(
                             child: Icon(
@@ -411,7 +404,7 @@ void showNewListingPopup(BuildContext context) {
                             ),
                           ),
                         ),
-                        SizedBox(height: 1.h,),
+                        SizedBox(height: 1.h),
                         customText(
                           'Add Photos',
                           fontSize: 16.sp,
@@ -424,55 +417,42 @@ void showNewListingPopup(BuildContext context) {
                   Align(
                     alignment: Alignment.centerLeft,
                     child: customText(
-                        'Title',
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w500,
-                        color: AppColors.titleColor
+                      'Title',
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w500,
+                      color: AppColors.titleColor,
                     ),
                   ),
                   SizedBox(height: 0.8.h),
-                  popUpField(
-                    'sod',
-                  ),
+                  popUpField('sod'),
                   SizedBox(height: 1.5.h),
                   Align(
                     alignment: Alignment.centerLeft,
                     child: customText(
-                        'Price',
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w500,
-                        color: AppColors.titleColor
+                      'Price',
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w500,
+                      color: AppColors.titleColor,
                     ),
                   ),
                   SizedBox(height: 0.8.h),
-                  popUpField(
-                    '0',
-                    keyboardType: TextInputType.number,
-                  ),
+                  popUpField('0', keyboardType: TextInputType.number),
                   SizedBox(height: 1.5.h),
                   Align(
                     alignment: Alignment.centerLeft,
                     child: customText(
-                        'Description',
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w500,
-                        color: AppColors.titleColor
+                      'Description',
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w500,
+                      color: AppColors.titleColor,
                     ),
                   ),
                   SizedBox(height: 0.8.h),
-                  popUpField(
-                    'Describe your item',
-                    maxLines: 5,
-                  ),
-                  SizedBox(height: 5.h),
-                  customButton(
-                    height: 5.8,
-                    'Publish Listing',
-                        () {
-                      Navigator.pop(ctx);
-                    },
-                    textColor: Colors.white,
-                  ),
+                  popUpField('Describe your item', maxLines: 5),
+                  SizedBox(height: 4.h),
+                  customButton(height: 5.8, 'Publish Listing', () {
+                    Navigator.pop(ctx);
+                  }, textColor: Colors.white),
                   SizedBox(height: 0.3.h),
                 ],
               ),
@@ -480,6 +460,20 @@ void showNewListingPopup(BuildContext context) {
           ),
         ),
       );
+    },
+  );
+}
+
+void paidPop(BuildContext context) {
+  showCustomPopup(
+    context,
+    title: 'Paid Successfully',
+    message:
+        'Your payment \$0.99 for listing the product has been successfully paid.',
+    buttonText: 'Next',
+    showIcon: true,
+    onButton: () {
+      Navigator.pop(context);
     },
   );
 }

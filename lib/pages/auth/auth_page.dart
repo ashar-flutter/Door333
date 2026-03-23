@@ -106,17 +106,22 @@ class _AuthPageState extends State<AuthPage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      customText(
-                        'Terms & Conditions',
-                        fontSize: 16.sp,
-                        color: AppColors.lightText,
-                        fontWeight: FontWeight.w200,
+                      onPress(
+                        onTap: () => Get.to(TermsAndConditions()),
+
+                        child: customText(
+                          'Terms and Conditions',
+                          fontSize: 16.sp,
+                          color: AppColors.lightText,
+                        ),
                       ),
-                      customText(
-                        'Privacy Policy',
-                        fontSize: 16.sp,
-                        color: AppColors.lightText,
-                        fontWeight: FontWeight.w200,
+                      onPress(
+                        onTap: () => Get.to(PrivacyPolicy()),
+                        child: customText(
+                          'Privacy Policy',
+                          fontSize: 16.sp,
+                          color: AppColors.lightText,
+                        ),
                       ),
                     ],
                   ),

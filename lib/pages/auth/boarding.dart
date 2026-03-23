@@ -86,6 +86,8 @@ class _BoardingState extends State<Boarding> {
                         height: 30.h,
                         width: 60.w,
                         fit: BoxFit.contain,
+                        filterQuality: FilterQuality.high,
+
                       ),
                     ),
                     SizedBox(height: 4.9.h),
