@@ -21,21 +21,18 @@ Future<void> showCustomPopup(
     barrierDismissible: true,
     barrierLabel: '',
     barrierColor: Colors.black54,
-    transitionDuration: const Duration(milliseconds: 180),
+    transitionDuration: const Duration(milliseconds: 280),
     pageBuilder: (_, _, _) => const SizedBox.shrink(),
     transitionBuilder: (ctx, anim, _, _) {
-      final curved = Curves.easeOutCubic.transform(anim.value);
-
-      final scale = 0.94 + (0.06 * curved);
-      final opacity = anim.value;
-
-      Widget child = Center(
-        child: Material(
-          color: Colors.transparent,
-          child: Transform.scale(
-            scale: scale,
-            child: Opacity(
-              opacity: opacity,
+      return ScaleTransition(
+        scale: Tween<double>(begin: 0.92, end: 1.0).animate(
+          CurvedAnimation(parent: anim, curve: Curves.easeOutCubic),
+        ),
+        child: FadeTransition(
+          opacity: anim,
+          child: Center(
+            child: Material(
+              color: Colors.transparent,
               child: Container(
                 margin: EdgeInsets.symmetric(horizontal: 8.w),
                 padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 3.h),
@@ -153,11 +150,6 @@ Future<void> showCustomPopup(
             ),
           ),
         ),
-      );
-
-      return AnimatedBuilder(
-        animation: anim,
-        builder: (_, _) => child,
       );
     },
   );
