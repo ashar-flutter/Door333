@@ -27,9 +27,9 @@ class _InboxState extends State<Inbox> {
               decoration: InputDecoration(
                 hintText: 'Message',
                 hintStyle: TextStyle(
-                  fontFamily: 'Hellix',
+                  fontFamily: 'Helix',
                   fontSize: 16.sp,
-                  color: AppColors.lightText,
+                  color: AppColors.primaryDarkBlue,
                 ),
                 border: InputBorder.none,
                 contentPadding: EdgeInsets.symmetric(
@@ -37,7 +37,7 @@ class _InboxState extends State<Inbox> {
                   vertical: 1.5.h,
                 ),
               ),
-              style: TextStyle(fontFamily: 'Hellix', fontSize: 16.sp),
+              style: TextStyle(fontFamily: 'Helix', fontSize: 16.sp),
             ),
           ),
           Padding(
@@ -98,7 +98,9 @@ class _InboxState extends State<Inbox> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          customText('Sarah Wilson', fontSize: 17.4.sp),
+                          customText('Sarah Wilson', fontSize: 17.sp,
+                          fontWeight: FontWeight.w700
+                          ),
                           customText(
                             'Active now',
                             fontSize: 16.2.sp,
@@ -132,8 +134,8 @@ class _InboxState extends State<Inbox> {
                             SizedBox(height: 1.3.h),
                             customText(
                               'Sarah Wilson',
-                              fontSize: 17.6.sp,
-                              fontWeight: FontWeight.w700,
+                              fontSize: 17.3.sp,
+                              fontWeight: FontWeight.w800,
                             ),
                             SizedBox(height: 9.h),
                           ],

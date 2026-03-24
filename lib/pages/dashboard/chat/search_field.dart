@@ -29,8 +29,8 @@ Widget searchField({
         hintText: hintText,
         hintStyle: TextStyle(
           fontSize: 15.sp,
-          color: AppColors.lightText,
-          fontFamily: "Hellix",
+          color: AppColors.hintText,
+          fontFamily: "Helix",
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(17),

@@ -147,7 +147,7 @@ class _CreatePostState extends State<CreatePost> {
                         decoration: InputDecoration(
                           hintText: "What's on your mind, Jane?",
                           hintStyle: TextStyle(
-                            fontFamily: 'Hellix',
+                            fontFamily: 'Helix',
                             color: AppColors.lightText,
                             fontSize: 15.3.sp,
                           ),
@@ -156,7 +156,7 @@ class _CreatePostState extends State<CreatePost> {
                           contentPadding: EdgeInsets.zero,
                         ),
                         style: TextStyle(
-                          fontFamily: 'Hellix',
+                          fontFamily: 'Helix',
                           fontSize: 16.sp,
                           color: AppColors.lightText,
                         ),

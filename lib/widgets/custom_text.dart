@@ -25,7 +25,7 @@ Widget customText(
           maxLines: maxLines,
           textAlign: textAlign,
           style: TextStyle(
-            fontFamily: 'Hellix',
+            fontFamily: 'Helix',
             fontSize: fontSize?.sp ?? 16.sp,
             fontStyle: fontStyle,
             color: color ?? AppColors.titleColor,

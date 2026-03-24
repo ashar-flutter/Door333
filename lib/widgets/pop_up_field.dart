@@ -34,7 +34,7 @@ Widget popUpField(
           textInputAction: textInputAction,
           onChanged: onChanged,
           style: TextStyle(
-            fontFamily: 'Hellix',
+            fontFamily: 'Helix',
             color: AppColors.titleColor,
             fontSize: fontSize.sp,
           ),
@@ -46,7 +46,7 @@ Widget popUpField(
               vertical: maxLines > 1 ? 1.5.h : 1.h,
             ),
             hintStyle: TextStyle(
-              fontFamily: 'Hellix',
+              fontFamily: 'Helix',
               fontSize: fontSize.sp,
               color: hintColor,
             ),

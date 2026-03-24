@@ -28,6 +28,6 @@ flutter:
     - assets/icons/
 
   fonts:
-    - family: Hellix
+    - family: Helix
       fonts:
-        - asset: assets/fonts/hellix.otf
+        - asset: assets/fonts/helix.otf

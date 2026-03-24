@@ -133,8 +133,7 @@ class _MainChatPageState extends State<MainChatPage> {
                           customText(
                             stories[i]['name'],
                             fontSize: 16.8.sp,
-                            color: AppColors.black,
-                            fontWeight: FontWeight.w600
+                            color: AppColors.lightText,
                           ),
                         ],
                       ),

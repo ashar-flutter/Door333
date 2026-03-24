@@ -34,7 +34,7 @@ Widget textField(
           textInputAction: textInputAction,
           onChanged: onChanged,
           style: TextStyle(
-              fontFamily: 'Hellix',
+              fontFamily: 'Helix',
               color: AppColors.titleColor,
               fontSize: fontSize.sp
           ),
@@ -82,7 +82,7 @@ Widget textField(
               vertical: 2.h,
             ),
             hintStyle: TextStyle(
-              fontFamily: 'Hellix',
+              fontFamily: 'Helix',
               fontSize: fontSize.sp,
               color: Colors.grey.shade400,
             ),
