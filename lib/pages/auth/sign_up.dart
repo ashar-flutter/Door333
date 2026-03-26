@@ -183,8 +183,8 @@ class _SignUpState extends State<SignUp> {
                                 });
                               },
                               child: Container(
-                                height: 1.8.h,
-                                width: 1.8.h,
+                                height: 1.7.h,
+                                width: 1.7.h,
                                 decoration: BoxDecoration(
                                   color: isChecked
                                       ? AppColors.primary
@@ -209,7 +209,7 @@ class _SignUpState extends State<SignUp> {
                             SizedBox(width: 2.w),
                             customText(
                               'I agree to the Terms & Conditions and Privacy Policy. ',
-                              fontSize: 15.2.sp,
+                              fontSize: 15.5.sp,
                               color: AppColors.lightText,
                               fontWeight: FontWeight.w300,
                             ),

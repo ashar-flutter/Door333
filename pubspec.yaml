@@ -30,4 +30,4 @@ flutter:
   fonts:
     - family: Helix
       fonts:
-        - asset: assets/fonts/helix.otf
+        - asset: assets/fonts/regular.otf
